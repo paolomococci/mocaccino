@@ -6,6 +6,7 @@
 #include <arpa/inet.h>
 
 #define PORT 8000
+#define WEBROOT "./view"
 
 struct ethernet_headers {
 	// TODO
