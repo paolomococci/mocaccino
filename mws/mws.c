@@ -32,6 +32,10 @@ void dump_row_memory() {
 	// TODO
 }
 
+void handle_http_request() {
+	// TODO
+}
+
 int send_string() {
 	int outcome = 1;
 	// TODO
@@ -44,8 +48,10 @@ int receive_from_socket() {
 	return outcome;
 }
 
-void handle_http_request() {
+int get_filesize() {
+	int size = 0;
 	// TODO
+	return size;
 }
 
 int main(int argc, char **argv) {
