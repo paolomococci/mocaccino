@@ -44,6 +44,10 @@ int receive_from_socket() {
 	return outcome;
 }
 
+void handle_http_request() {
+	// TODO
+}
+
 int main(int argc, char **argv) {
 	int status = 0;
 	// TODO
