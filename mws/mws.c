@@ -25,8 +25,8 @@ struct tcp_headers {
 
 void display_fatal_error_message(char *message) {
 	char error_message[255];
-	strcpy(error_message, " ! fatal error ! ");
-	strncat(error_message, message, 238);
+	strcpy(error_message, " ! fatal error: ");
+	strncat(error_message, message, 239);
 	perror(error_message);
 	exit(EXIT_FAILURE);
 }
