@@ -29,7 +29,27 @@ void error_checked_malloc_wrapper() {
 }
 
 void dump_row_memory(const unsigned char *buffer, const unsigned int length) {
-	// TODO
+	unsigned char byte;
+	unsigned int index0, index1;
+	for(index0 = 0; index0 < length; index0++) {
+		byte = buffer[index0];
+		printf("%02x ", buffer[index0]);
+		if(((index0 % 16) == 15) || (index0 == length-1)) {
+			for(index1 = 0; index1 < 15 - (index0 % 16); index1++) {
+				printf("\t");
+			}
+			printf("   ");
+			for(index1=(index0-(index0%16)); index1 <= index0; index1++) {
+				byte = buffer[index1];
+				if((byte > 31) && (byte < 127)) {
+					printf("%c", byte);
+				} else {
+					printf(".");
+				}
+			}
+			printf("\n");
+		}
+	}
 }
 
 void handle_http_request() {
