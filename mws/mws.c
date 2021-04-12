@@ -86,11 +86,20 @@ int get_filesize() {
 int main(int argc, char **argv) {
 
 	int status = 0;
+	
 	int acceptance_socket_file_descriptor, connected_socket_file_descriptor;
 	int length_received = 1, yes = 1;
 	struct sockaddr_in host_address, client_address;
 	char buffer[BUFFER_LENGTH];
 	socklen_t socket_length;
+
+	if ((acceptance_socket_file_descriptor = socket(
+			PF_INET,
+			SOCK_STREAM,
+			0
+		)) == -1) {
+		display_fatal_error_message("in the socket");
+	}
 
 	while(TRUE) {
 		// TODO
