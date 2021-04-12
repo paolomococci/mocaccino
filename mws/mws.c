@@ -21,7 +21,11 @@ struct tcp_headers {
 };
 
 void display_fatal_error_message(char *message) {
-	// TODO
+	char error_message[255];
+	strcpy(error_message, " ! fatal error ! ");
+	strncat(error_message, message, 238);
+	perror(error_message);
+	exit(EXIT_FAILURE);
 }
 
 void error_checked_malloc_wrapper() {
