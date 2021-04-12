@@ -127,7 +127,38 @@ int main(void) {
 	}
 
 	while(TRUE) {
-		// TODO
+		socket_length = sizeof(struct sockaddr_in);
+		connected_socket_file_descriptor = accept(
+				acceptance_socket_file_descriptor,
+				(struct sockaddr *)&client_address,
+				&socket_length
+			);
+		if(connected_socket_file_descriptor == -1) {
+			display_fatal_error_message("when accepting the connection");
+		}
+		printf(
+				"the server states: obtained connection from %s port %d\n",
+				inet_ntoa(client_address.sin_addr),
+				ntohs(client_address.sin_port)
+		);
+		send(connected_socket_file_descriptor, "MWS at work...\n", 14, 0);
+		length_received = recv(
+				connected_socket_file_descriptor,
+				&buffer,
+				BUFFER_LENGTH,
+				0
+			);
+		while(length_received > 0) {
+			printf("RECV: %d bytes\n", length_received);
+			dump_row_memory(buffer, length_received);
+			length_received = recv(
+					connected_socket_file_descriptor,
+					&buffer,
+					BUFFER_LENGTH,
+					0
+				);
+		}
+		close(connected_socket_file_descriptor);
 	}
 
 	exit(EXIT_SUCCESS);
