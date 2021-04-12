@@ -114,6 +114,14 @@ int main(void) {
 	host_address.sin_addr.s_addr = INADDR_ANY;
 	memset(&(host_address.sin_zero), '\0', 8);
 
+	if (bind(
+			acceptance_socket_file_descriptor,
+			(struct sockaddr *)&host_address,
+			sizeof(struct sockaddr)
+		) == -1) {
+		display_fatal_error_message("when binding to socket");
+	}
+
 	while(TRUE) {
 		// TODO
 	}
