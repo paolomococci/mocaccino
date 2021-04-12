@@ -20,7 +20,7 @@ struct tcp_headers {
 	// TODO
 };
 
-void display_fatal_error_message() {
+void display_fatal_error_message(char *message) {
 	// TODO
 }
 
