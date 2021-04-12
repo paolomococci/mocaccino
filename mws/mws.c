@@ -28,7 +28,7 @@ void error_checked_malloc_wrapper() {
 	// TODO
 }
 
-void dump_row_memory() {
+void dump_row_memory(const unsigned char *buffer, const unsigned int length) {
 	// TODO
 }
 
