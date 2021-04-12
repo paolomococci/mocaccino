@@ -11,6 +11,8 @@
 #define PORT 8000
 #define WEBROOT "./view"
 
+#define BUFFER_LENGTH 1024
+
 struct ethernet_headers {
 	// TODO
 };
