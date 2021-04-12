@@ -99,6 +99,16 @@ int main(void) {
 		display_fatal_error_message("in the socket");
 	}
 
+	if (setsockopt(
+			acceptance_socket_file_descriptor,
+			SOL_SOCKET,
+			SO_REUSEADDR,
+			&yes,
+			sizeof(int)
+		) == -1) {
+		display_fatal_error_message("when setting socket option SO_REUSEADDR");
+	}
+
 	while(TRUE) {
 		// TODO
 	}
