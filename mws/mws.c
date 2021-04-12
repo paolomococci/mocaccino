@@ -83,7 +83,7 @@ int get_filesize() {
 	return size;
 }
 
-int main(int argc, char **argv) {
+int main(void) {
 
 	int status = 0;
 	
