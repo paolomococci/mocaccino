@@ -84,8 +84,6 @@ int get_filesize() {
 }
 
 int main(void) {
-
-	int status = 0;
 	
 	int acceptance_socket_file_descriptor, connected_socket_file_descriptor;
 	int length_received = 1, yes = 1;
@@ -105,5 +103,5 @@ int main(void) {
 		// TODO
 	}
 
-	return status;
+	exit(EXIT_SUCCESS);
 }
