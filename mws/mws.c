@@ -5,6 +5,9 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 
+#define FALSE 0
+#define TRUE !FALSE
+
 #define PORT 8000
 #define WEBROOT "./view"
 
