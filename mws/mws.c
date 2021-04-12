@@ -109,6 +109,11 @@ int main(void) {
 		display_fatal_error_message("when setting socket option SO_REUSEADDR");
 	}
 
+	host_address.sin_family = AF_INET;
+	host_address.sin_port = htons(PORT);
+	host_address.sin_addr.s_addr = INADDR_ANY;
+	memset(&(host_address.sin_zero), '\0', 8);
+
 	while(TRUE) {
 		// TODO
 	}
