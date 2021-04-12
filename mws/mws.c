@@ -122,6 +122,10 @@ int main(void) {
 		display_fatal_error_message("when binding to socket");
 	}
 
+	if (listen(acceptance_socket_file_descriptor, 10) == -1) {
+		display_fatal_error_message("when listening on socket");
+	}
+
 	while(TRUE) {
 		// TODO
 	}
