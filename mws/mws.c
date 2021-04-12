@@ -82,7 +82,17 @@ int get_filesize() {
 }
 
 int main(int argc, char **argv) {
+
 	int status = 0;
-	// TODO
+	int socket_file_descriptor0, socket_file_descriptor1;
+	int length_received = 1, yes = 1;
+	struct sockaddr_in host_address, client_address;
+	char buffer[1024];
+	socklen_t socket_length;
+
+	while(TRUE) {
+		// TODO
+	}
+
 	return status;
 }
