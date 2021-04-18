@@ -12,6 +12,9 @@ static const char *c_dbname = "testdb";
 
 int main(void) {
 
+	MYSQL *connection;
+	connection = mysql_init(NULL);
+
 	// TODO
 
 	exit(EXIT_SUCCESS);
