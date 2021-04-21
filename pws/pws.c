@@ -21,6 +21,10 @@
 void handle_http_request(int, struct sockaddr_in *);
 void handle_fatal_error(char *);
 
+int get_filesize(int);
+int send_a_line_to_socket(int, unsigned char *);
+int receive_a_line_from_socket(int, unsigned char *);
+
 int main(void) {
 	// TODO
 	exit(EXIT_FAILURE);
