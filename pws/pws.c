@@ -20,5 +20,5 @@
 
 int main(void) {
 	// TODO
-	return 0;
+	exit(EXIT_FAILURE);
 }
