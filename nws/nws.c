@@ -27,5 +27,8 @@ int receive_a_line_from_socket(int, unsigned char *);
 
 int main(void) {
 	// TODO
-	exit(EXIT_FAILURE);
+   while(TRUE) {
+	// todo
+   }
+   exit(EXIT_FAILURE);
 }
