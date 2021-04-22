@@ -31,6 +31,9 @@ int main(void) {
    int connected_socket_file_descriptor;
    int yes = 1;
 
+   struct sockaddr_in host_address;
+   struct sockaddr_in client_address;
+
 	// TODO
    while(TRUE) {
 	// todo
