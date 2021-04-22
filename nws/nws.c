@@ -32,3 +32,8 @@ int main(void) {
    }
    exit(EXIT_FAILURE);
 }
+
+int receive_a_line_from_socket(
+		int acceptance_socket_file_descriptor,
+		unsigned char *ucp_destination_buffer
+	) { return 0; }
