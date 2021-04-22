@@ -26,6 +26,11 @@ int send_a_line_to_socket(int, unsigned char *);
 int receive_a_line_from_socket(int, unsigned char *);
 
 int main(void) {
+
+   int acceptance_socket_file_descriptor;
+   int connected_socket_file_descriptor;
+   int yes = 1;
+
 	// TODO
    while(TRUE) {
 	// todo
