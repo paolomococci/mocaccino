@@ -34,6 +34,12 @@ int main(void) {
    struct sockaddr_in host_address;
    struct sockaddr_in client_address;
 
+   socklen_t socket_in_address_size;
+
+   host_address.sin_family = AF_INET;
+   host_address.sin_port = htons(PORT);
+   host_address.sin_addr.s_addr = INADDR_ANY;
+
 	// TODO
    while(TRUE) {
 	// todo
