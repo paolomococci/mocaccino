@@ -33,6 +33,8 @@ int main(void) {
    exit(EXIT_FAILURE);
 }
 
+void handle_fatal_error(char *message) {}
+
 int send_a_line_to_socket(
 		int acceptance_socket_file_descriptor,
 		unsigned char *buffer
