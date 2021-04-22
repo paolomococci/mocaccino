@@ -48,6 +48,9 @@ int main(void) {
    exit(EXIT_FAILURE);
 }
 
+
+void request_acceptance_message(int port) {}
+
 void handle_http_request(
 		int acceptance_socket_file_descriptor,
 		struct sockaddr_in *p_client_address
