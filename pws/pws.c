@@ -13,7 +13,7 @@
 
 #define PORT 8000
 #define WEBROOT "./views"
-#define MAX_CONNECTIONS 10
+#define MAX_CONNECTIONS 20
 
 #define END_OF_LINE "\r\n"
 #define END_OF_LINE_SIZE 2
