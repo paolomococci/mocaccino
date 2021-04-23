@@ -49,3 +49,8 @@ int send_a_line_to_socket(
 		int acceptance_socket_file_descriptor,
 		unsigned char *buffer
 	) { return 1; }
+
+int receive_a_line_from_socket(
+		int acceptance_socket_file_descriptor,
+		unsigned char *ucp_destination_buffer
+	) { return 0; }
