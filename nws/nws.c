@@ -49,7 +49,9 @@ int main(void) {
    exit(EXIT_FAILURE);
 }
 
-void request_acceptance_message(int port) {}
+void request_acceptance_message(int port) {
+	printf("nws accepting web requests on port %d\n", port);
+}
 
 void handle_http_request(
 		int acceptance_socket_file_descriptor,
