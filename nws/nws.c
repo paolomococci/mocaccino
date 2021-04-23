@@ -64,7 +64,7 @@ void handle_fatal_error(char *message) {
    strncat(error_message, message, 230);
    perror(error_message);
 
-   exit(EXIT_FAILURE);
+   exit(EXIT_SUCCESS);
 }
 
 int get_filesize(int file_descriptor) { return 0; }
