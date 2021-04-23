@@ -132,4 +132,31 @@ int send_a_line_to_socket(
 int receive_a_line_from_socket(
 		int acceptance_socket_file_descriptor,
 		unsigned char *ucp_destination_buffer
-	) { return 0; }
+	) {
+
+   unsigned char *ucp_temp;
+
+   int end_of_line_matched = 0;
+
+   ucp_temp = ucp_destination_buffer;
+
+   while(recv(
+		   acceptance_socket_file_descriptor,
+		   ucp_temp,
+		   1,
+		   0
+   ) == 1) {
+      if(*ucp_temp == END_OF_LINE[end_of_line_matched]) {
+         end_of_line_matched++;
+         if(end_of_line_matched == END_OF_LINE_SIZE) {
+            *(ucp_temp + 1 - END_OF_LINE_SIZE) = '\0';
+            return strlen(ucp_destination_buffer);
+         }
+      } else {
+         end_of_line_matched = 0;
+      }
+      ucp_temp++;
+   }
+
+   return 0;
+}
