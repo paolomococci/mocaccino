@@ -93,7 +93,15 @@ void handle_fatal_error(char *message) {
    exit(EXIT_SUCCESS);
 }
 
-int get_filesize(int file_descriptor) { return 0; }
+int get_filesize(int file_descriptor) {
+
+   struct stat stat_struct;
+
+   if(fstat(file_descriptor, &stat_struct) == -1) {
+      return -1;
+   }
+   return (int) stat_struct.st_size;
+}
 
 int send_a_line_to_socket(
 		int acceptance_socket_file_descriptor,
