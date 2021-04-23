@@ -44,7 +44,7 @@ int main(void) {
    while(TRUE) {
        // todo
    }
-   exit(EXIT_FAILURE);
+   exit(EXIT_SUCCESS);
 }
 
 void request_acceptance_message(int port) {}
