@@ -56,7 +56,15 @@ void request_acceptance_message(int port) {
 void handle_http_request(
 		int acceptance_socket_file_descriptor,
 		struct sockaddr_in *p_client_address
-	) {}
+	) {
+
+   unsigned char *ucp_temp;
+   unsigned char request[500];
+   unsigned char resource[500];
+
+   int file_descriptor;
+   int length;
+}
 
 void handle_fatal_error(char *message) {
 
