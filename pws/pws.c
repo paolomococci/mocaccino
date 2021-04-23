@@ -42,3 +42,5 @@ void handle_http_request(
 	) {}
 
 void handle_fatal_error(char *message) {}
+
+int get_filesize(int file_descriptor) { return 0; }
