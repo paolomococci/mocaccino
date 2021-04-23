@@ -78,7 +78,40 @@ void handle_http_request(
    );
 
    ucp_temp = strstr(request, " HTTP/");
-   // TODO
+
+   if(ucp_temp == NULL) {
+      // TODO
+   } else {
+      // TODO
+      }
+      if(strncmp(request, "HEAD ", 5) == 0) {
+         // TODO
+      }
+      if(ucp_temp == NULL) {
+         // TODO
+      } else {
+         if (ucp_temp[strlen(ucp_temp) - 1] == '/') {
+            // TODO
+         }
+         // TODO
+         if(file_descriptor == -1) {
+            // TODO
+         } else {
+            // TODO
+            if(ucp_temp == request + 4) {
+               if( (length = get_filesize(file_descriptor)) == -1) {
+                  // TODO
+               }
+               if( (ucp_temp = (unsigned char *) malloc(length)) == NULL) {
+                  // TODO
+               }
+               // TODO
+            }
+            // TODO
+         }
+      }
+   }
+
    shutdown(acceptance_socket_file_descriptor, SHUT_RDWR);
 }
 
