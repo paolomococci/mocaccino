@@ -76,6 +76,8 @@ void handle_http_request(
 		   ntohs(p_client_address->sin_port),
 		   request
    );
+
+   ucp_temp = strstr(request, " HTTP/");
 }
 
 void handle_fatal_error(char *message) {
