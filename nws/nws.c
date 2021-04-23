@@ -41,7 +41,8 @@ int main(void) {
    host_address.sin_port = htons(PORT);
    host_address.sin_addr.s_addr = INADDR_ANY;
 
-	// TODO
+   request_acceptance_message(PORT);
+
    while(TRUE) {
 	// todo
    }
