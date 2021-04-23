@@ -106,7 +106,28 @@ int get_filesize(int file_descriptor) {
 int send_a_line_to_socket(
 		int acceptance_socket_file_descriptor,
 		unsigned char *buffer
-	) { return 1; }
+	) {
+
+   int sent_bytes;
+   int bytes_to_send;
+
+   bytes_to_send = strlen(buffer);
+
+   while(bytes_to_send > 0) {
+      sent_bytes = send(
+    		  acceptance_socket_file_descriptor,
+			  buffer,
+			  bytes_to_send,
+			  0
+      	  );
+      if(sent_bytes == -1)
+         return 0;
+      bytes_to_send -= sent_bytes;
+      buffer += sent_bytes;
+   }
+
+   return 1;
+}
 
 int receive_a_line_from_socket(
 		int acceptance_socket_file_descriptor,
