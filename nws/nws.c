@@ -68,7 +68,14 @@ void handle_http_request(
    length = receive_a_line_from_socket(
 		   acceptance_socket_file_descriptor,
 		   request
-   	   );
+   );
+
+   printf(
+		   "got request from %s:%d \"%s\"\n",
+		   inet_ntoa(p_client_address->sin_addr),
+		   ntohs(p_client_address->sin_port),
+		   request
+   );
 }
 
 void handle_fatal_error(char *message) {
