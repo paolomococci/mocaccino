@@ -30,7 +30,7 @@ int main(void) {
 
    int acceptance_socket_file_descriptor;
    int connected_socket_file_descriptor;
-   int yes = 1;
+   int option_value = 1;
 
    struct sockaddr_in host_address;
    struct sockaddr_in client_address;
