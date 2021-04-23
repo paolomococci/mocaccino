@@ -64,6 +64,11 @@ void handle_http_request(
 
    int file_descriptor;
    int length;
+
+   length = receive_a_line_from_socket(
+		   acceptance_socket_file_descriptor,
+		   request
+   	   );
 }
 
 void handle_fatal_error(char *message) {
