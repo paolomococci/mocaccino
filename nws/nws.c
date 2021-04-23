@@ -78,6 +78,8 @@ void handle_http_request(
    );
 
    ucp_temp = strstr(request, " HTTP/");
+   // TODO
+   shutdown(acceptance_socket_file_descriptor, SHUT_RDWR);
 }
 
 void handle_fatal_error(char *message) {
