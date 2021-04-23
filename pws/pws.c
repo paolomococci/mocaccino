@@ -32,3 +32,5 @@ int main(void) {
    }
    exit(EXIT_FAILURE);
 }
+
+void request_acceptance_message(int port) {}
