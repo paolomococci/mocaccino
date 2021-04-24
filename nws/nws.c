@@ -43,6 +43,12 @@ int main(void) {
 
    request_acceptance_message(PORT);
 
+   if ((acceptance_socket_file_descriptor = socket(
+		   PF_INET,
+		   SOCK_STREAM,
+		   0
+   	   )) == -1) {}
+
    while(TRUE) {
 	// todo
    }
