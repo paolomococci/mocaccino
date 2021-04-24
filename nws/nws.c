@@ -59,6 +59,12 @@ int main(void) {
 
    memset(&(host_address.sin_zero), '\0', 8);
 
+   if (bind(
+		   acceptance_socket_file_descriptor,
+		   (struct sockaddr *)&host_address,
+		   sizeof(struct sockaddr)
+   	   ) == -1) {}
+
    while(TRUE) {
 	// todo
    }
