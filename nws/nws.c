@@ -74,7 +74,9 @@ int main(void) {
    if (listen(
 		   acceptance_socket_file_descriptor,
 		   MAX_CONNECTIONS
-   	   ) == -1) {}
+   	   ) == -1) {
+      handle_fatal_error("when listening on socket");
+   }
 
    while(TRUE) {
 	// todo
