@@ -65,6 +65,11 @@ int main(void) {
 		   sizeof(struct sockaddr)
    	   ) == -1) {}
 
+   if (listen(
+		   acceptance_socket_file_descriptor,
+		   MAX_CONNECTIONS
+   	   ) == -1) {}
+
    while(TRUE) {
 	// todo
    }
