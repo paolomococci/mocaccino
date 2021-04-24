@@ -49,6 +49,14 @@ int main(void) {
 		   0
    	   )) == -1) {}
 
+   if (setsockopt(
+		   acceptance_socket_file_descriptor,
+		   SOL_SOCKET,
+		   SO_REUSEADDR,
+		   &option_value,
+		   sizeof(int)
+   	   ) == -1) {}
+
    while(TRUE) {
 	// todo
    }
