@@ -59,6 +59,7 @@ int main(void) {
 		   sizeof(int)
    	   ) == -1) {
       handle_fatal_error("when setting socket option SO_REUSEADDR");
+   }
 
    memset(&(host_address.sin_zero), '\0', 8);
 
