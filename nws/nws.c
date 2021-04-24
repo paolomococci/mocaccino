@@ -85,7 +85,11 @@ int main(void) {
     		  acceptance_socket_file_descriptor,
 			  (struct sockaddr *)&client_address,
 			  &socket_in_address_size
-      	  );
+      );
+
+      if(connected_socket_file_descriptor == -1) {
+         handle_fatal_error("when accepting connection");
+      }
    }
 
    exit(EXIT_SUCCESS);
