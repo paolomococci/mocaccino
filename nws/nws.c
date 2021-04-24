@@ -57,6 +57,8 @@ int main(void) {
 		   sizeof(int)
    	   ) == -1) {}
 
+   memset(&(host_address.sin_zero), '\0', 8);
+
    while(TRUE) {
 	// todo
    }
