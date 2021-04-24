@@ -80,34 +80,70 @@ void handle_http_request(
    ucp_temp = strstr(request, " HTTP/");
 
    if(ucp_temp == NULL) {
-      // TODO
+      printf(" NOT HTTP!\n");
    } else {
-      // TODO
+      *ucp_temp = 0;
+      ucp_temp = NULL;
+      if(strncmp(request, "GET ", 4) == 0) {
+         ucp_temp = request + 4;
       }
       if(strncmp(request, "HEAD ", 5) == 0) {
-         // TODO
+         ucp_temp = request + 5;
       }
       if(ucp_temp == NULL) {
-         // TODO
+         printf("\tUNKNOWN REQUEST!\n");
       } else {
          if (ucp_temp[strlen(ucp_temp) - 1] == '/') {
-            // TODO
+            strcat(ucp_temp, "test.html");
          }
-         // TODO
+         strcpy(resource, WEBROOT);
+         strcat(resource, ucp_temp);
+         file_descriptor = open(resource, O_RDONLY, 0);
+         printf("\topening \'%s\'\t", resource);
          if(file_descriptor == -1) {
-            // TODO
+            printf(" 404 Not Found\n");
+            send_a_line_to_socket(
+            		acceptance_socket_file_descriptor,
+					"HTTP/1.0 404 NOT FOUND\r\n"
+            );
+            send_a_line_to_socket(
+            		acceptance_socket_file_descriptor,
+					"server: nws\r\n\r\n"
+            );
+            send_a_line_to_socket(
+            		acceptance_socket_file_descriptor,
+					"<html><head><title>404 Not Found</title></head>"
+            );
+            send_a_line_to_socket(
+            		acceptance_socket_file_descriptor,
+					"<body><h2>URL not found</h2></body></html>\r\n"
+            );
          } else {
-            // TODO
+            printf(" 200 OK\n");
+            send_a_line_to_socket(
+            		acceptance_socket_file_descriptor,
+					"HTTP/1.0 200 OK\r\n"
+            );
+            send_a_line_to_socket(
+            		acceptance_socket_file_descriptor,
+					"server: nws\r\n\r\n"
+            );
             if(ucp_temp == request + 4) {
                if( (length = get_filesize(file_descriptor)) == -1) {
-                  // TODO
+                  handle_fatal_error(
+                		  "when trying to retrieve the size of the resource"
+                  );
                }
                if( (ucp_temp = (unsigned char *) malloc(length)) == NULL) {
-                  // TODO
+                  handle_fatal_error(
+                		  "when trying to allocating memory for reading the resource"
+                  );
                }
-               // TODO
+               read(file_descriptor, ucp_temp, length);
+               send(acceptance_socket_file_descriptor, ucp_temp, length, 0);
+               free(ucp_temp);
             }
-            // TODO
+            close(file_descriptor);
          }
       }
    }
