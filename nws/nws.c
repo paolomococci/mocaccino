@@ -47,7 +47,9 @@ int main(void) {
 		   PF_INET,
 		   SOCK_STREAM,
 		   0
-   	   )) == -1) {}
+   	   )) == -1) {
+      handle_fatal_error("in the socket");
+   }
 
    if (setsockopt(
 		   acceptance_socket_file_descriptor,
