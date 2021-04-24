@@ -82,14 +82,19 @@ int main(void) {
       socket_in_address_size = sizeof(struct sockaddr_in);
 
       connected_socket_file_descriptor = accept(
-    		  acceptance_socket_file_descriptor,
-			  (struct sockaddr *)&client_address,
-			  &socket_in_address_size
+    		acceptance_socket_file_descriptor,
+		(struct sockaddr *)&client_address,
+		&socket_in_address_size
       );
 
       if(connected_socket_file_descriptor == -1) {
          handle_fatal_error("when accepting connection");
       }
+
+      handle_http_request(
+    		connected_socket_file_descriptor,
+		&client_address
+      );
    }
 
    exit(EXIT_SUCCESS);
