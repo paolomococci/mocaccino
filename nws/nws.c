@@ -79,7 +79,8 @@ int main(void) {
    }
 
    while(TRUE) {
-	// todo
+      socket_in_address_size = sizeof(struct sockaddr_in);
+
    }
 
    exit(EXIT_SUCCESS);
