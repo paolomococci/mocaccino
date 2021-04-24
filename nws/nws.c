@@ -67,7 +67,9 @@ int main(void) {
 		   acceptance_socket_file_descriptor,
 		   (struct sockaddr *)&host_address,
 		   sizeof(struct sockaddr)
-   	   ) == -1) {}
+   	   ) == -1) {
+      handle_fatal_error("when binding to socket");
+   }
 
    if (listen(
 		   acceptance_socket_file_descriptor,
