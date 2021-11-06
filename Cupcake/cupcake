@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# mocaccino cupcake bash script
+# build a dotnet solution
+# version 0.0.1
+
+buildCoreProject() {
+	#todo
+	echo -e "\n 📂 Scaffold of core project under construction.\n"
+}
+
+
+buildInfrastructureProject() {
+	#todo
+	echo -e "\n 📂 Scaffold of infrastructure project under construction.\n"
+}
+
+
+buildPresentationProject() {
+	#todo
+	echo -e "\n 📂 Scaffold of presentation project under construction.\n"
+}
+
+addingProjectsToTheSolution() {
+	# todo
+	echo -e "\n ➕ Now all projects will be added to the solution.\n"
+}
+
+buildSolution() {
+	# todo
+	solutionName=$1
+	echo -e "\n 🆕 Scaffold of new solution: \"$solutionName\" under construction\n"
+	buildCoreProject
+	buildInfrastructureProject
+	buildPresentationProject
+	addingProjectsToTheSolution
+	echo -e "\n 🆗 Well, a solution .NET named: \"$solutionName\" has just been generated.\n"
+}
+
+main() {
+	if [ "$1" != '' ]; then
+		buildSolution $1
+	else
+    		echo -e "\n ❌ I am sorry, you forgot to pass the solution name!\n"
+	fi
+}
+
+# passing one argument to the main function
+
+main $1
