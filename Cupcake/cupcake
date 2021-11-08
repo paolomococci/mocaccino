@@ -25,8 +25,22 @@ buildCoreProject() {
 
 
 buildInfrastructureProject() {
-	#todo
+
 	echo -e "\n 📂 Scaffold of infrastructure project under construction.\n"
+
+	mkdir infrastructure
+    cd infrastructure
+    dotnet new classlib -f net5.0 --name $solutionName.Data
+    dotnet new classlib -f net5.0 --name $solutionName.Shared
+    cd $solutionName.Data \
+        && mkdir Contexts \
+        && dotnet add reference ../../core/$solutionName.Domain/$solutionName.Domain.csproj \
+        && dotnet add reference ../../core/$solutionName.Application/$solutionName.Application.csproj
+    dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+    cd ../$solutionName.Shared \
+        && dotnet add reference ../../core/$solutionName.Application/$solutionName.Application.csproj
+
+    cd ../..
 }
 
 
