@@ -45,8 +45,20 @@ buildInfrastructureProject() {
 
 
 buildPresentationProject() {
-	#todo
+
 	echo -e "\n 📂 Scaffold of presentation project under construction.\n"
+
+	mkdir presentation
+    cd presentation
+    dotnet new webapi --name $solutionName.WebApi \
+        && cd $solutionName.WebApi \
+        && dotnet add reference ../../core/$solutionName.Application/$solutionName.Application.csproj \
+        && dotnet add reference ../../infrastructure/$solutionName.Data/$solutionName.Data.csproj \
+        && dotnet add reference ../../infrastructure/$solutionName.Shared/$solutionName.Shared.csproj \
+        && dotnet add package Microsoft.EntityFrameworkCore.Design \
+        && dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+
+    cd ../../..
 }
 
 addingProjectsToTheSolution() {
