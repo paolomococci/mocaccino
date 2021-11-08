@@ -30,10 +30,12 @@ buildSolution() {
 	# todo
 	solutionName=$1
 	echo -e "\n 🆕 Scaffold of new solution: \"$solutionName\" under construction\n"
-	buildCoreProject
-	buildInfrastructureProject
-	buildPresentationProject
-	addingProjectsToTheSolution
+	
+	buildCoreProject $solutionName
+	buildInfrastructureProject $solutionName
+	buildPresentationProject $solutionName
+	addingProjectsToTheSolution $solutionName
+	
 	echo -e "\n 🆗 Well, a solution .NET named: \"$solutionName\" has just been generated.\n"
 }
 
