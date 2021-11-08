@@ -62,8 +62,14 @@ buildPresentationProject() {
 }
 
 addingProjectsToTheSolution() {
-	# todo
+
 	echo -e "\n ➕ Now all projects will be added to the solution.\n"
+
+    dotnet sln add src/core/$solutionName.Domain/$solutionName.Domain.csproj
+    dotnet sln add src/core/$solutionName.Application/$solutionName.Application.csproj
+    dotnet sln add src/infrastructure/$solutionName.Data/$solutionName.Data.csproj
+    dotnet sln add src/infrastructure/$solutionName.Shared/$solutionName.Shared.csproj
+    dotnet sln add src/presentation/$solutionName.WebApi/$solutionName.WebApi.csproj
 }
 
 buildSolution() {
