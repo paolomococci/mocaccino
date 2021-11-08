@@ -73,16 +73,33 @@ addingProjectsToTheSolution() {
 }
 
 buildSolution() {
-	# todo
-	solutionName=$1
-	echo -e "\n 🆕 Scaffold of new solution: \"$solutionName\" under construction\n"
-	
+
+    solutionName=$1
+
+    excluded="bin/"
+    excluded+="\nobj/"
+
+    echo -e "\n 🆕 Scaffold of new solution: \"$solutionName\" under construction\n"
+
+    mkdir $solutionName
+    cd $solutionName \
+        && dotnet new sln
+
+	dotnet new tool-manifest \
+		&& dotnet tool install dotnet-ef
+
+	echo -e "$excluded" >> .gitignore
+	echo -e "# $solutionName\n" >> README.md
+
+	mkdir bin
+	mkdir src
+
 	buildCoreProject $solutionName
 	buildInfrastructureProject $solutionName
 	buildPresentationProject $solutionName
 	addingProjectsToTheSolution $solutionName
-	
-	echo -e "\n 🆗 Well, a solution .NET named: \"$solutionName\" has just been generated.\n"
+
+    echo -e "\n 🆗 Well, a solution .NET named: \"$solutionName\" has just been generated.\n"
 }
 
 main() {
