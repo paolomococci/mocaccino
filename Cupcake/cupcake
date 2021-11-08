@@ -6,9 +6,9 @@
 
 buildCoreProject() {
 
-	echo -e "\n 📂 Scaffold of core project under construction.\n"
+    echo -e "\n 📂 Scaffold of core project under construction.\n"
 
-	cd src
+    cd src
 
     mkdir core
     cd core
@@ -26,9 +26,9 @@ buildCoreProject() {
 
 buildInfrastructureProject() {
 
-	echo -e "\n 📂 Scaffold of infrastructure project under construction.\n"
+    echo -e "\n 📂 Scaffold of infrastructure project under construction.\n"
 
-	mkdir infrastructure
+    mkdir infrastructure
     cd infrastructure
     dotnet new classlib -f net5.0 --name $solutionName.Data
     dotnet new classlib -f net5.0 --name $solutionName.Shared
@@ -46,9 +46,9 @@ buildInfrastructureProject() {
 
 buildPresentationProject() {
 
-	echo -e "\n 📂 Scaffold of presentation project under construction.\n"
+    echo -e "\n 📂 Scaffold of presentation project under construction.\n"
 
-	mkdir presentation
+    mkdir presentation
     cd presentation
     dotnet new webapi --name $solutionName.WebApi \
         && cd $solutionName.WebApi \
@@ -63,7 +63,7 @@ buildPresentationProject() {
 
 addingProjectsToTheSolution() {
 
-	echo -e "\n ➕ Now all projects will be added to the solution.\n"
+    echo -e "\n ➕ Now all projects will be added to the solution.\n"
 
     dotnet sln add src/core/$solutionName.Domain/$solutionName.Domain.csproj
     dotnet sln add src/core/$solutionName.Application/$solutionName.Application.csproj
