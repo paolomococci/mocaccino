@@ -4,6 +4,12 @@
 # build a dotnet solution
 # version 0.0.1
 
+buildNewClass() {
+    classNamespace=$2
+    className=$1
+    echo -e "namespace $classNamespace\n{\n\tpublic class $className\n\t{\n\t\t\n\t}\n}\n" > $className
+}
+
 buildCoreProject() {
 
     echo -e "\n 📂 Scaffold of core project under construction.\n"
