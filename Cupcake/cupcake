@@ -90,15 +90,33 @@ buildInfrastructureProject() {
 
     mkdir infrastructure
     cd infrastructure
+
     dotnet new classlib -f net5.0 --name $solutionName.Data
     dotnet new classlib -f net5.0 --name $solutionName.Shared
+
     cd $solutionName.Data \
         && mkdir Contexts \
         && dotnet add reference ../../core/$solutionName.Domain/$solutionName.Domain.csproj \
         && dotnet add reference ../../core/$solutionName.Application/$solutionName.Application.csproj
+
     dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+
+    cd Contexts
+    buildNewClass ApplicationDbContext.cs $solutionName.Data.Contexts
+
+    cd ..
+    mkdir Migrations
+
+    buildNewClass DependencyInjection.cs $solutionName.Data
+
     cd ../$solutionName.Shared \
-        && dotnet add reference ../../core/$solutionName.Application/$solutionName.Application.csproj
+        && dotnet add reference ../../core/$solutionName.Application/$solutionName.Application.csproj \
+        && dotnet add package MailKit \
+        && dotnet add package Microsoft.Extensions.Options.ConfigurationExtensions \
+        && dotnet add package MimeKit \
+        && dotnet add package CsvHelper
+    mkdir Files
+    mkdir 
 
     cd ../..
 }
