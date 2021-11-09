@@ -83,7 +83,6 @@ buildCoreProject() {
     cd ../..
 }
 
-
 buildInfrastructureProject() {
 
     echo -e "\n 📂 Scaffold of infrastructure project under construction.\n"
