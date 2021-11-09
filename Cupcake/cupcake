@@ -26,6 +26,10 @@ buildCoreProject() {
         && mkdir Entities \
        	&& mkdir Enums \
        	&& mkdir Settings
+    
+    if [[ -f Class1.cs ]]; then
+        rm Class1.cs
+    fi
 
     cd Settings
     buildNewClass MailSettings.cs $solutionName.Domain.Settings
@@ -79,6 +83,10 @@ buildCoreProject() {
     
     cd ../..
     buildNewClass DependencyInjection.cs $solutionName.Application
+    
+    if [[ -f Class1.cs ]]; then
+        rm Class1.cs
+    fi
 
     cd ../..
 }
@@ -107,6 +115,10 @@ buildInfrastructureProject() {
     cd ..
 
     buildNewClass DependencyInjection.cs $solutionName.Data
+    
+    if [[ -f Class1.cs ]]; then
+        rm Class1.cs
+    fi
 
     cd ../$solutionName.Shared \
         && dotnet add reference ../../core/$solutionName.Application/$solutionName.Application.csproj \
@@ -117,6 +129,10 @@ buildInfrastructureProject() {
     mkdir Files
 
     buildNewClass DependencyInjection.cs $solutionName.Shared
+    
+    if [[ -f Class1.cs ]]; then
+        rm Class1.cs
+    fi
 
     cd ../..
 }
