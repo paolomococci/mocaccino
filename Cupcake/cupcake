@@ -18,13 +18,67 @@ buildCoreProject() {
 
     mkdir core
     cd core
+
     dotnet new classlib -f netstandard2.1 --name $solutionName.Domain
     dotnet new classlib -f netstandard2.1 --name $solutionName.Application
+
     cd $solutionName.Domain \
         && mkdir Entities \
-       	&& mkdir Enums
-    cd ../$solutionName.Application \
-        && dotnet add reference ../$solutionName.Domain/$solutionName.Domain.csproj
+       	&& mkdir Enums \
+       	&& mkdir Settings
+
+    cd Settings
+    buildNewClass MailSettings.cs $solutionName.Domain.Settings
+    
+
+    cd ../../$solutionName.Application \
+        && dotnet add reference ../$solutionName.Domain/$solutionName.Domain.csproj \
+        && dotnet add package MediatR \
+        && dotnet add package MediatR.Extensions.Microsoft.DependencyInjection \
+        && dotnet add package Microsoft.Extensions.Logging.Abstractions \
+        && dotnet add package FluentValidation \
+        && dotnet add package FluentValidation.DependencyInjectionExtensions \
+        && dotnet add package Microsoft.EntityFrameworkCore \
+        && dotnet add package AutoMapper \
+        && dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
+
+    mkdir Common
+    mkdir Dtos
+
+    cd Common \
+        && mkdir Behaviors \
+        && mkdir Exceptions \
+        && mkdir Interfaces \
+        && mkdir Mappings
+    
+    cd Behaviors
+    buildNewClass LoggingBehavior.cs $solutionName.Application.Common.Behaviors
+    buildNewClass PerformanceBehavior.cs $solutionName.Application.Common.Behaviors
+    buildNewClass UnhandledExceptionBehavior.cs $solutionName.Application.Common.Behaviors
+    buildNewClass ValidationBehavior.cs $solutionName.Application.Common.Behaviors
+
+    cd ../Exceptions
+    buildNewClass ApiException.cs $solutionName.Application.Common.Exceptions
+    buildNewClass NotFoundException.cs $solutionName.Application.Common.Exceptions
+    buildNewClass ValidationException.cs $solutionName.Application.Common.Exceptions
+
+    cd ../Interfaces
+    buildNewClass IApplicationDbContext.cs $solutionName.Application.Common.Interfaces
+    buildNewClass ICsvFileBuilder.cs $solutionName.Application.Common.Interfaces
+    buildNewClass IDateTime.cs $solutionName.Application.Common.Interfaces
+    buildNewClass IEmailService.cs $solutionName.Application.Common.Interfaces
+
+    cd ../Mappings
+    buildNewClass IMapForm.cs $solutionName.Application.Common.Mappings
+    buildNewClass MappingProfile.cs $solutionName.Application.Common.Mappings
+
+    cd ../../Dtos
+    mkdir Email
+    cd Email
+    buildNewClass EmailDto.cs $solutionName.Application.Dtos.Email
+    
+    cd ../..
+    buildNewClass DependencyInjection.cs $solutionName.Application
 
     cd ../..
 }
