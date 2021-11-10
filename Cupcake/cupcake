@@ -4,6 +4,12 @@
 # build a dotnet solution
 # version 0.0.1
 
+buildNewInterface() {
+    interfaceNamespace=$2
+    interfaceName=$1
+    echo -e "namespace $interfaceNamespace\n{\n\tpublic interface $interfaceName\n\t{\n\t\t\n\t}\n}\n" > $interfaceName.cs
+}
+
 buildNewClass() {
     classNamespace=$2
     className=$1
@@ -64,16 +70,16 @@ buildCoreProject() {
     cd ../Exceptions
     buildNewClass ApiException $solutionName.Application.Common.Exceptions
     buildNewClass NotFoundException $solutionName.Application.Common.Exceptions
-    buildNewClass ValidationException $solutionName.Application.Common.Exceptions
+    buildNewClass PropertyValidationException $solutionName.Application.Common.Exceptions
 
     cd ../Interfaces
-    buildNewClass IApplicationDbContext $solutionName.Application.Common.Interfaces
-    buildNewClass ICsvFileBuilder $solutionName.Application.Common.Interfaces
-    buildNewClass IDateTime $solutionName.Application.Common.Interfaces
-    buildNewClass IEmailService $solutionName.Application.Common.Interfaces
+    buildNewInterface IApplicationDbContext $solutionName.Application.Common.Interfaces
+    buildNewInterface ICsvFileBuilder $solutionName.Application.Common.Interfaces
+    buildNewInterface IDateTime $solutionName.Application.Common.Interfaces
+    buildNewInterface IEmailService $solutionName.Application.Common.Interfaces
 
     cd ../Mappings
-    buildNewClass IMapForm $solutionName.Application.Common.Mappings
+    buildNewInterface IMapForm $solutionName.Application.Common.Mappings
     buildNewClass MappingProfile $solutionName.Application.Common.Mappings
 
     cd ../../Dtos
