@@ -80,7 +80,7 @@ buildCoreProject() {
     buildNewInterface IEmailService $solutionName.Application.Common.Interfaces
 
     cd ../Mappings
-    buildNewInterface IMapForm $solutionName.Application.Common.Mappings
+    buildNewInterface IMapFrom $solutionName.Application.Common.Mappings
     buildNewClass MappingProfile $solutionName.Application.Common.Mappings
 
     cd ../../Dtos
