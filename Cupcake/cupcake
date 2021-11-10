@@ -42,15 +42,16 @@ buildCoreProject() {
     
 
     cd ../../$solutionName.Application \
-        && dotnet add reference ../$solutionName.Domain/$solutionName.Domain.csproj \
-        && dotnet add package MediatR \
-        && dotnet add package MediatR.Extensions.Microsoft.DependencyInjection \
-        && dotnet add package Microsoft.Extensions.Logging.Abstractions \
-        && dotnet add package FluentValidation \
-        && dotnet add package FluentValidation.DependencyInjectionExtensions \
-        && dotnet add package Microsoft.EntityFrameworkCore \
-        && dotnet add package AutoMapper \
-        && dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
+        && dotnet add reference ../$solutionName.Domain/$solutionName.Domain.csproj
+        
+    dotnet add package MediatR
+    dotnet add package MediatR.Extensions.Microsoft.DependencyInjection
+    dotnet add package Microsoft.Extensions.Logging.Abstractions
+    dotnet add package FluentValidation
+    dotnet add package FluentValidation.DependencyInjectionExtensions
+    dotnet add package Microsoft.EntityFrameworkCore
+    dotnet add package AutoMapper
+    dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
 
     mkdir Common
     mkdir Dtos
@@ -127,11 +128,13 @@ buildInfrastructureProject() {
     fi
 
     cd ../$solutionName.Shared \
-        && dotnet add reference ../../core/$solutionName.Application/$solutionName.Application.csproj \
-        && dotnet add package MailKit \
-        && dotnet add package Microsoft.Extensions.Options.ConfigurationExtensions \
-        && dotnet add package MimeKit \
-        && dotnet add package CsvHelper
+        && dotnet add reference ../../core/$solutionName.Application/$solutionName.Application.csproj
+
+    dotnet add package MailKit
+    dotnet add package Microsoft.Extensions.Options.ConfigurationExtensions
+    dotnet add package MimeKit
+    dotnet add package CsvHelper
+
     mkdir Files
 
     buildNewClass DependencyInjection $solutionName.Shared
@@ -154,9 +157,10 @@ buildPresentationProject() {
         && cd $solutionName.WebApi \
         && dotnet add reference ../../core/$solutionName.Application/$solutionName.Application.csproj \
         && dotnet add reference ../../infrastructure/$solutionName.Data/$solutionName.Data.csproj \
-        && dotnet add reference ../../infrastructure/$solutionName.Shared/$solutionName.Shared.csproj \
-        && dotnet add package Microsoft.EntityFrameworkCore.Design \
-        && dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+        && dotnet add reference ../../infrastructure/$solutionName.Shared/$solutionName.Shared.csproj
+
+    dotnet add package Microsoft.EntityFrameworkCore.Design
+    dotnet add package Microsoft.EntityFrameworkCore.Sqlite
 
     mkdir Filters
 
