@@ -162,6 +162,9 @@ buildPresentationProject() {
     dotnet add package Microsoft.EntityFrameworkCore.Design
     dotnet add package Microsoft.EntityFrameworkCore.Sqlite
 
+    dotnet add package Microsoft.AspNetCore.Mvc.Versioning
+    dotnet add package Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer
+
     mkdir Filters
 
     cd ../../..
