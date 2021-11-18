@@ -49,7 +49,7 @@ buildCoreProject() {
     dotnet add package Microsoft.Extensions.Logging.Abstractions
     dotnet add package FluentValidation
     dotnet add package FluentValidation.DependencyInjectionExtensions
-    dotnet add package Microsoft.EntityFrameworkCore
+    dotnet add package Microsoft.EntityFrameworkCore --version 5.0.12
     dotnet add package AutoMapper
     dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
 
@@ -80,7 +80,7 @@ buildCoreProject() {
     buildNewInterface IEmailService $solutionName.Application.Common.Interfaces
 
     cd ../Mappings
-    buildNewInterface IMapForm $solutionName.Application.Common.Mappings
+    buildNewInterface IMapFrom $solutionName.Application.Common.Mappings
     buildNewClass MappingProfile $solutionName.Application.Common.Mappings
 
     cd ../../Dtos
@@ -114,7 +114,7 @@ buildInfrastructureProject() {
         && dotnet add reference ../../core/$solutionName.Domain/$solutionName.Domain.csproj \
         && dotnet add reference ../../core/$solutionName.Application/$solutionName.Application.csproj
 
-    dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+    dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 5.0.12
 
     cd Contexts
     buildNewClass ApplicationDbContext $solutionName.Data.Contexts
@@ -159,8 +159,7 @@ buildPresentationProject() {
         && dotnet add reference ../../infrastructure/$solutionName.Data/$solutionName.Data.csproj \
         && dotnet add reference ../../infrastructure/$solutionName.Shared/$solutionName.Shared.csproj
 
-    dotnet add package Microsoft.EntityFrameworkCore.Design
-    dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+    dotnet add package Microsoft.EntityFrameworkCore.Design --version 5.0.12
 
     dotnet add package Microsoft.AspNetCore.Mvc.Versioning
     dotnet add package Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer
@@ -194,8 +193,8 @@ buildSolution() {
     cd $solutionName \
         && dotnet new sln
 
-	dotnet new tool-manifest \
-		&& dotnet tool install dotnet-ef
+	dotnet new tool-manifest
+    dotnet tool install dotnet-ef
 
 	echo -e "$excluded" >> .gitignore
 	echo -e "# $solutionName\n" >> README.md
