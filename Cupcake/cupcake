@@ -283,20 +283,8 @@ buildSolution() {
 	buildInfrastructureLayer $solutionName
 	buildPresentationLayer $solutionName
 	addingLayersToTheSolution $solutionName
-	
-	currentDirectory=`pwd | grep -o '[^/]*$'`
-    if [ "$currentDirectory" == 'src' ]; then
-        definesProjectIdentity $solutionName
-    else
-        echo -e "\n ❌ Sorry, an error occurred: the current directory is not src!\n"
-    fi
-	
-	currentDirectory=`pwd | grep -o '[^/]*$'`
-    if [ "$currentDirectory" == 'src' ]; then
-        addingUserController $solutionName
-    else
-        echo -e "\n ❌ Sorry, an error occurred: the current directory is not src!\n"
-    fi	
+	definesProjectIdentity $solutionName
+	addingUserController $solutionName
 
     echo -e "\n 🆗 Well, a solution .NET named: \"$solutionName\" has just been generated.\n"
 }
