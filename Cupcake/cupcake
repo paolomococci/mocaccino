@@ -2,6 +2,12 @@
 
 # mocaccino cupcake bash script
 # build a dotnet solution
+# key concepts: solution/layer/project
+# Solution: name of solution
+# Layers: core, infrastructure, presentation
+# Projects: Application and Domain belong to layer core
+#           Data, Shared and Identity belong to layer infrastructure
+#           WebApi belongs to level presentation
 # version 0.0.1
 
 buildNewInterface() {
@@ -16,9 +22,9 @@ buildNewClass() {
     echo -e "namespace $classNamespace\n{\n\tpublic class $className\n\t{\n\t\t\n\t}\n}\n" > $className.cs
 }
 
-buildCoreProject() {
+buildCoreLayer() {
 
-    echo -e "\n 📂 Scaffold of core project under construction.\n"
+    echo -e "\n 🔧 Scaffold of core layer under construction.\n"
 
     cd src
 
@@ -37,7 +43,10 @@ buildCoreProject() {
         rm Class1.cs
     fi
 
-    cd Settings
+    cd Entities
+    buildNewClass User $solutionName.Domain.Entities
+
+    cd ../Settings
     buildNewClass MailSettings $solutionName.Domain.Settings
     
 
@@ -78,6 +87,7 @@ buildCoreProject() {
     buildNewInterface ICsvFileBuilder $solutionName.Application.Common.Interfaces
     buildNewInterface IDateTime $solutionName.Application.Common.Interfaces
     buildNewInterface IEmailService $solutionName.Application.Common.Interfaces
+    buildNewInterface IUserService $solutionName.Application.Common.Interfaces
 
     cd ../Mappings
     buildNewInterface IMapFrom $solutionName.Application.Common.Mappings
@@ -85,8 +95,13 @@ buildCoreProject() {
 
     cd ../../Dtos
     mkdir Email
+    mkdir User
     cd Email
     buildNewClass EmailDto $solutionName.Application.Dtos.Email
+    
+    cd ../User
+    buildNewClass AuthenticateResponse $solutionName.Application.Dtos.User
+    buildNewClass AuthenticateRequest $solutionName.Application.Dtos.User
     
     cd ../..
     buildNewClass DependencyInjection $solutionName.Application
@@ -99,15 +114,16 @@ buildCoreProject() {
 }
 
 
-buildInfrastructureProject() {
+buildInfrastructureLayer() {
 
-    echo -e "\n 📂 Scaffold of infrastructure project under construction.\n"
+    echo -e "\n 🔧 Scaffold of infrastructure layer under construction.\n"
 
     mkdir infrastructure
     cd infrastructure
 
     dotnet new classlib -f net5.0 --name $solutionName.Data
     dotnet new classlib -f net5.0 --name $solutionName.Shared
+    dotnet new classlib -f net5.0 --name $solutionName.Identity
 
     cd $solutionName.Data \
         && mkdir Contexts \
@@ -146,9 +162,43 @@ buildInfrastructureProject() {
     cd ../..
 }
 
-buildPresentationProject() {
+definesProjectIdentity() {
 
-    echo -e "\n 📂 Scaffold of presentation project under construction.\n"
+    echo -e "\n 🔧 Making the web API secure by defining the project Identity.\n"
+
+    cd infrastructure/$solutionName.Identity \
+        && dotnet add reference ../../core/$solutionName.Application/$solutionName.Application.csproj
+    
+    dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer --version 5.0.12
+    dotnet add package Microsoft.AspNetCore.Authentication.OpenIdConnect --version 5.0.12
+    
+    if [[ -f Class1.cs ]]; then
+        rm Class1.cs
+    fi
+    
+    buildNewClass DependencyInjection $solutionName.Identity
+    
+    mkdir Helpers \
+        && cd Helpers
+    
+    buildNewClass AuthSettings $solutionName.Identity.Helpers
+    buildNewClass JwtMiddleware $solutionName.Identity.Helpers
+    buildNewClass AuthorizeAttribute $solutionName.Identity.Helpers
+    
+    cd ..
+    mkdir Services \
+        && cd Services \
+        && buildNewClass UserService $solutionName.Identity.Services
+
+    cd ../../../presentation/$solutionName.WebApi \
+        && dotnet add reference ../../infrastructure/$solutionName.Identity/$solutionName.Identity.csproj
+
+    cd ../..
+}
+
+buildPresentationLayer() {
+
+    echo -e "\n 🔧 Scaffold of presentation layer under construction.\n"
 
     mkdir presentation
     cd presentation
@@ -181,15 +231,27 @@ buildPresentationProject() {
     cd ../../..
 }
 
-addingProjectsToTheSolution() {
+addingLayersToTheSolution() {
 
-    echo -e "\n ➕ Now all projects will be added to the solution.\n"
+    echo -e "\n ➕ Now all layers will be added to the solution.\n"
 
     dotnet sln add src/core/$solutionName.Domain/$solutionName.Domain.csproj
     dotnet sln add src/core/$solutionName.Application/$solutionName.Application.csproj
     dotnet sln add src/infrastructure/$solutionName.Data/$solutionName.Data.csproj
     dotnet sln add src/infrastructure/$solutionName.Shared/$solutionName.Shared.csproj
     dotnet sln add src/presentation/$solutionName.WebApi/$solutionName.WebApi.csproj
+	
+	cd src
+}
+
+addingUserController() {
+
+    echo -e "\n 🔧 Adding the class UsersController into Controllers directory.\n"
+    
+	cd presentation/$solutionName.WebApi/Controllers \
+    && buildNewClass UsersController $solutionName.WebApi.Controllers
+    
+    cd ../../..
 }
 
 buildSolution() {
@@ -198,6 +260,9 @@ buildSolution() {
 
     excluded="bin/"
     excluded+="\nobj/"
+    excluded+="\n.vscode/"
+    excluded+="\nLogs/"
+    excluded+="\n*.sqlite3"
 
     echo -e "\n 🆕 Scaffold of new solution: \"$solutionName\" under construction\n"
 
@@ -214,10 +279,24 @@ buildSolution() {
 	mkdir bin
 	mkdir src
 
-	buildCoreProject $solutionName
-	buildInfrastructureProject $solutionName
-	buildPresentationProject $solutionName
-	addingProjectsToTheSolution $solutionName
+	buildCoreLayer $solutionName
+	buildInfrastructureLayer $solutionName
+	buildPresentationLayer $solutionName
+	addingLayersToTheSolution $solutionName
+	
+	currentDirectory=`pwd | grep -o '[^/]*$'`
+    if [ "$currentDirectory" == 'src' ]; then
+        definesProjectIdentity $solutionName
+    else
+        echo -e "\n ❌ Sorry, an error occurred: the current directory is not src!\n"
+    fi
+	
+	currentDirectory=`pwd | grep -o '[^/]*$'`
+    if [ "$currentDirectory" == 'src' ]; then
+        addingUserController $solutionName
+    else
+        echo -e "\n ❌ Sorry, an error occurred: the current directory is not src!\n"
+    fi	
 
     echo -e "\n 🆗 Well, a solution .NET named: \"$solutionName\" has just been generated.\n"
 }
