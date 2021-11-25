@@ -151,7 +151,17 @@ buildInfrastructureLayer() {
     dotnet add package MimeKit
     dotnet add package CsvHelper
 
-    mkdir Files
+    mkdir Files \
+        && cd Files \
+        && buildNewClass CsvFileBuilder $solutionName.Shared.Files \
+        && cd ..
+    
+
+    mkdir Services \
+        && cd Services \
+        && buildNewClass DateTimeService $solutionName.Shared.Services \
+        && buildNewClass EmailService $solutionName.Shared.Services \
+        && cd ..
 
     buildNewClass DependencyInjection $solutionName.Shared
     
