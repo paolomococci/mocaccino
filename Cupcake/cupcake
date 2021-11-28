@@ -81,6 +81,7 @@ buildCoreLayer() {
     buildNewClass ApiException $solutionName.Application.Common.Exceptions
     buildNewClass NotFoundException $solutionName.Application.Common.Exceptions
     buildNewClass PropertyValidationException $solutionName.Application.Common.Exceptions
+    buildNewClass ValidationException $solutionName.Application.Common.Exceptions
 
     cd ../Interfaces
     buildNewInterface IApplicationDbContext $solutionName.Application.Common.Interfaces
