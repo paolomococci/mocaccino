@@ -61,6 +61,9 @@ buildCoreLayer() {
     dotnet add package Microsoft.EntityFrameworkCore --version 5.0.12
     dotnet add package AutoMapper
     dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
+    dotnet add package Microsoft.Extensions.Caching.StackExchangeRedis --version 5.0.1
+    dotnet add package Microsoft.Extensions.Configuration --version 5.0.0
+    dotnet add package Newtonsoft.Json --version 13.0.1
 
     mkdir Common
     mkdir Dtos
