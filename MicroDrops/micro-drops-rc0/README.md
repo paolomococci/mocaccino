@@ -17,3 +17,9 @@ npm install
 ```shell
 ng add @angular/material
 ```
+
+## I add helper module
+
+```shell
+ng g m modules/helper
+```
