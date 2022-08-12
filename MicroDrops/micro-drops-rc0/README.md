@@ -23,3 +23,9 @@ ng add @angular/material
 ```shell
 ng g m modules/helper
 ```
+
+## serve
+
+```shell
+ng serve -o
+```
