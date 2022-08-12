@@ -11,3 +11,9 @@ ng n micro-drops-rc0 --routing --skip-install --skip-tests --style=sass
 ```shell
 npm install
 ```
+
+## I install Angular Material
+
+```shell
+ng add @angular/material
+```
