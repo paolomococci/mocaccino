@@ -10,3 +10,9 @@ docker ps --all
 docker stop container_id
 docker start container_id
 ```
+
+## useful commands in sql language
+
+```text
+
+```
