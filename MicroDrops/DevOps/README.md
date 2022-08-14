@@ -15,9 +15,9 @@ docker start container_id
 
 ```text
 CREATE OR REPLACE DATABASE micro_drops_db;
-CREATE USER IF NOT EXISTS username@localhost IDENTIFIED BY 'password';
+CREATE USER IF NOT EXISTS micro_drops@localhost IDENTIFIED BY 'password';
 SELECT PASSWORD('password');
-GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost' IDENTIFIED BY PASSWORD 'hash_returned_from_the_previous_command';
+GRANT ALL PRIVILEGES ON *.* TO 'micro_drops'@'localhost' IDENTIFIED BY PASSWORD 'hash_returned_from_the_previous_command';
 FLUSH PRIVILEGES;
-SHOW GRANTS FOR 'username';
+SHOW GRANTS FOR 'micro_drops';
 ```
