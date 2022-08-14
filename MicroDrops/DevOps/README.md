@@ -11,8 +11,13 @@ docker stop container_id
 docker start container_id
 ```
 
-## useful commands in sql language
+## useful commands in SQL language
 
 ```text
-
+CREATE OR REPLACE DATABASE micro_drops_db;
+CREATE USER IF NOT EXISTS username@localhost IDENTIFIED BY 'password';
+SELECT PASSWORD('password');
+GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost' IDENTIFIED BY PASSWORD 'hash_returned_from_the_previous_command';
+FLUSH PRIVILEGES;
+SHOW GRANTS FOR 'username';
 ```
