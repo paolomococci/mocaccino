@@ -112,4 +112,18 @@ export class KindService {
         )
       )
   }
+
+  /* PUT HTTP method */
+  update(kind: Kind): Observable<any> {
+    return this.httpClient
+      .put(
+        this.baseUrl,
+        kind,
+        this.httpOptions
+      )
+      .pipe(
+        tap(_ => this.log(`updated kind id=${kind.id}`)),
+        catchError(this.handleError<any>('update'))
+      )
+  }
 }
