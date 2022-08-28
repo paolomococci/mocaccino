@@ -62,6 +62,12 @@ ng g s services/kind
 ng g s services/data
 ```
 
+## I add message service
+
+```shell
+ng g s services/message
+```
+
 ## mimic communication with the backend
 
 At this point, for the sole purpose of development, I have chosen to simulate the connection with a remote server.
