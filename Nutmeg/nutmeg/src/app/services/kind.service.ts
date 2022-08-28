@@ -16,6 +16,8 @@ import {
   HttpHeaders
 } from '@angular/common/http'
 
+import { Kind } from '../models/kind.model'
+
 @Injectable({
   providedIn: 'root'
 })
