@@ -23,5 +23,7 @@ import { Kind } from '../models/kind.model'
 })
 export class KindService {
 
+  private baseUrl: string = 'api/kinds'
+
   constructor() { }
 }
