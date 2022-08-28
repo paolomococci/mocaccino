@@ -56,6 +56,12 @@ ng g i models/Kind --type=model
 ng g s services/kind
 ```
 
+## I add data service
+
+```shell
+ng g s services/data
+```
+
 ## serve
 
 ```shell
