@@ -25,5 +25,11 @@ export class KindService {
 
   private baseUrl: string = 'api/kinds'
 
+  httpOptions = {
+    headers: new HttpHeaders(
+      { 'Content-Type': 'application/json' }
+    )
+  }
+
   constructor() { }
 }
