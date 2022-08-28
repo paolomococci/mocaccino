@@ -94,4 +94,22 @@ export class KindService {
         catchError(this.handleError<Kind>(`read id=${id}`))
       )
   }
+
+  /* GET HTTP method */
+  readAll(): Observable<Kind[]> {
+    return this.httpClient
+      .get<Kind[]>(
+        this.baseUrl
+      ).pipe(
+        tap(
+          _ => this.log('retrieved kinds')
+        ),
+        catchError(
+          this.handleError<Kind[]>(
+            'readAll',
+            []
+          )
+        )
+      )
+  }
 }
