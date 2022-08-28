@@ -44,6 +44,12 @@ ng g c components/kind
 ng g c components/search
 ```
 
+## I add detail component
+
+```shell
+ng g c components/detail
+```
+
 ## I add helper module
 
 ```shell
