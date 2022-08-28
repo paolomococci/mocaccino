@@ -52,4 +52,19 @@ export class KindService {
       return of(result as T)
     }
   }
+
+  /* POST HTTP method */
+  create(kind: Kind): Observable<Kind> {
+    return this.httpClient.post<Kind>(
+      this.baseUrl,
+      kind,
+      this.httpOptions
+    )
+      .pipe(
+        tap((newKind: Kind) => this.log(
+          `create new kind id=${newKind.id}`
+        )),
+        catchError(this.handleError<Kind>('create'))
+      )
+  }
 }
