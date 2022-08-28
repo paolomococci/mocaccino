@@ -44,6 +44,12 @@ ng g c components/kind
 ng g m modules/helper
 ```
 
+# I add Kind interface
+
+```shell
+ng g i models/Kind --type=model
+```
+
 ## serve
 
 ```shell
