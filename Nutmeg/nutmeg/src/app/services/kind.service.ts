@@ -36,4 +36,8 @@ export class KindService {
     private httpClient: HttpClient,
     private messageService: MessageService
   ) { }
+
+  private log(message: string) {
+    this.messageService.add(`KindService: ${message}`)
+  }
 }
