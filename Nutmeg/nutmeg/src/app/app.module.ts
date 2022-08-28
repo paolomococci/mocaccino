@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { HelperModule } from './modules/helper/helper.module'
 import { SearchComponent } from './components/search/search.component'
+import { DetailComponent } from './components/detail/detail.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SearchComponent } from './components/search/search.component'
     MainComponent,
     NavbarComponent,
     KindComponent,
-    SearchComponent
+    SearchComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
