@@ -17,6 +17,7 @@ import {
 } from '@angular/common/http'
 
 import { Kind } from '../models/kind.model'
+import { MessageService } from './message.service'
 
 @Injectable({
   providedIn: 'root'
@@ -31,5 +32,8 @@ export class KindService {
     )
   }
 
-  constructor() { }
+  constructor(
+    private httpClient: HttpClient,
+    private messageService: MessageService
+  ) { }
 }
