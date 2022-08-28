@@ -10,13 +10,15 @@ import { AppComponent } from './app.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { HelperModule } from './modules/helper/helper.module'
+import { SearchComponent } from './components/search/search.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     NavbarComponent,
-    KindComponent
+    KindComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
