@@ -126,4 +126,15 @@ export class KindService {
         catchError(this.handleError<any>('update'))
       )
   }
+
+  /* DELETE HTTP method */
+  delete(id: number): Observable<Kind> {
+    const url = `${this.baseUrl}/${id}`
+    return this.httpClient
+      .delete<Kind>(url, this.httpOptions)
+      .pipe(
+        tap(_ => this.log(`deleted kind id=${id}`)),
+        catchError(this.handleError<Kind>('delete'))
+      )
+  }
 }
