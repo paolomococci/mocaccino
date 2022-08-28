@@ -1,6 +1,6 @@
 # nutmeg
 
-Angular 14.1.3
+Angular 14
 
 ## scaffolding
 
