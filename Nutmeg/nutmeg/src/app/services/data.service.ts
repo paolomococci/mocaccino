@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core'
-import { InMemoryDbService, RequestInfo } from 'angular-in-memory-web-api'
-import { Observable } from 'rxjs'
+import { InMemoryDbService } from 'angular-in-memory-web-api'
+
+import { Kind } from './../models/kind.model'
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,8 @@ export class DataService implements InMemoryDbService {
 
   constructor() { }
 
-  createDb(reqInfo?: RequestInfo | undefined): {} | Observable<{}> | Promise<{}> {
-    throw new Error('Method not implemented.')
+  createDb() {
+    const kinds: Kind[] = []
+    return {kinds}
   }
 }
