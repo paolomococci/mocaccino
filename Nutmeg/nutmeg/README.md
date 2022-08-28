@@ -50,6 +50,12 @@ ng g m modules/helper
 ng g i models/Kind --type=model
 ```
 
+## I add kind service
+
+```shell
+ng g s services/kind
+```
+
 ## serve
 
 ```shell
