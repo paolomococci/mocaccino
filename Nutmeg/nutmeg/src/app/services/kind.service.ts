@@ -137,4 +137,22 @@ export class KindService {
         catchError(this.handleError<Kind>('delete'))
       )
   }
+
+  /* GET HTTP method */
+  search(temp: string): Observable<Kind[]> {
+    if (!temp.trim()) {
+      return of([])
+    } else {
+      return this.httpClient
+        .get<Kind[]>(`${this.baseUrl}/?name=${temp}`)
+        .pipe(
+          tap(
+            kinds => kinds.length ?
+            this.log(`found kinds matching "${temp}"`) :
+            this.log(`no kinds matching "${temp}"`)
+          ),
+          catchError(this.handleError<Kind[]>('search', []))
+        )
+    }
+  }
 }
