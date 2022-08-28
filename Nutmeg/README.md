@@ -1,3 +1,3 @@
-# Nutmeg project
+# Nutmeg
 
-The React framework for the user interface.
+An CRUD application template developed thanks to the Angular framework.
