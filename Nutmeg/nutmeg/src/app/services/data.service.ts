@@ -14,4 +14,12 @@ export class DataService implements InMemoryDbService {
     const kinds: Kind[] = []
     return {kinds}
   }
+
+  generateId(kinds: Kind[]): number {
+    return kinds.length > 0 ? Math.max(
+      ...kinds.map(
+        kind => kind.id
+      )
+    ) + 1 : 1000
+  }
 }
