@@ -38,6 +38,12 @@ ng g c components/navbar
 ng g c components/kind
 ```
 
+## I add search component
+
+```shell
+ng g c components/search
+```
+
 ## I add helper module
 
 ```shell
