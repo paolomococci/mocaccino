@@ -1,5 +1,7 @@
 # micro-drops-rc0
 
+Angular 14.2.5
+
 ## scaffolding
 
 ```shell
