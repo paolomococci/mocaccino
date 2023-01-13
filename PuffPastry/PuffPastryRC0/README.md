@@ -66,4 +66,7 @@ mkdir Views/Ledger
 touch Views/Ledger/Index.cshtml
 mkdir Controllers
 echo -e "namespace PuffPastry.Mvc.Feather.Controllers;\n\npublic class LedgerController {}" > Controllers/LedgerController.cs
+mkdir wwwroot
+mkdir wwwroot/css
+mkdir wwwroot/js
 ```
