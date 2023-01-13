@@ -56,4 +56,7 @@ cd PuffPastry.Mvc.Feather
 dotnet add ./PuffPastry.Mvc.Feather.csproj reference ../PuffPastry.Common/PuffPastry.Common.csproj
 mkdir Models
 echo -e "namespace PuffPastry.Mvc.Feather.Models;\n\npublic class ErrorViewModel {}" > Models/ErrorViewModel.cs
+mkdir Views
+touch Views/_ViewImports.cshtml
+touch Views/_ViewStart.cshtml
 ```
