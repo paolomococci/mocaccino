@@ -69,4 +69,6 @@ echo -e "namespace PuffPastry.Mvc.Feather.Controllers;\n\npublic class LedgerCon
 mkdir wwwroot
 mkdir wwwroot/css
 mkdir wwwroot/js
+touch wwwroot/css/site.css
+touch wwwroot/js/site.js
 ```
