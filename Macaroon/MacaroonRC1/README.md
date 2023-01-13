@@ -60,3 +60,7 @@ index:
 form for selecting the file to upload not yet completed:
 
 ![form for selecting the file to upload not yet completed](https://github.com/paolomococci/mocaccino/blob/main/screenshots/Macaroon/Macaroon-Upload_1.png)
+
+form for selecting the file to upload once completed:
+
+![form for selecting the file to upload once completed](https://github.com/paolomococci/mocaccino/blob/main/screenshots/Macaroon/Macaroon-Upload_2.png)
