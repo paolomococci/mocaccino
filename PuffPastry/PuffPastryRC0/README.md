@@ -7,6 +7,7 @@ How to distribute spreadsheets thanks to a web application.
 ```shell
 mkdir PuffPastryRC0
 cd PuffPastryRC0
+touch README.md
 ```
 
 ### I create the file that defines the workspace
@@ -28,5 +29,21 @@ EOF
 
 ```shell
 dotnet new gitignore
-touch README.md
+```
+
+### PuffPastry.Common project
+
+```shell
+dotnet new classlib -o PuffPastry.Common
+cd PuffPastry.Common
+rm Class1.cs
+dotnet add package ClosedXML --version 0.97.0
+mkdir Models
+echo -e "namespace PuffPastry.Common.Models;\n\npublic class LedgerModel {}" > Models/LedgerModel.cs
+echo -e "namespace PuffPastry.Common.Models;\n\npublic class ItemModel {}" > Models/ItemModel.cs
+mkdir Sheet
+mkdir Sheet/Templates
+echo -e "namespace PuffPastry.Common.Sheet.Templates;\n\npublic class FormulaSheetTemplate {}" > Sheet/Templates/FormulaSheetTemplate.cs
+echo -e "namespace PuffPastry.Common.Sheet.Templates;\n\npublic class DatatypeSheetTemplate {}" > Sheet/Templates/DatatypeSheetTemplate.cs
+echo -e "namespace PuffPastry.Common.Sheet.Templates;\n\npublic class PinnedSheetTemplate {}" > Sheet/Templates/PinnedSheetTemplate.cs
 ```
