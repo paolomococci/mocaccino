@@ -50,3 +50,5 @@ mkdir Controllers
 echo -e "namespace Macaroon.Web.Controllers;\n\npublic class HomeController {}" > Controllers/HomeController.cs
 dotnet watch run
 ```
+
+## screenshots
