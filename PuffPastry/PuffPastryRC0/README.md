@@ -1,6 +1,6 @@
 # PuffPastryRC0
 
-How to distribute spreadsheets thanks to a web application.
+How to generate and distribute spreadsheets thanks to a web application.
 
 ## scaffolding
 
