@@ -10,4 +10,9 @@ public class LedgerController : Controller {
   ) {
     this._logger = logger;
   }
+
+  public IActionResult Index()
+  {
+    return View();
+  }
 }
