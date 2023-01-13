@@ -98,6 +98,20 @@ public class PinnedSheetTemplate
       false,
       new DateTime(2010, 3, 1)
     ));
-    throw new NotImplementedException();
+    var pinnedSheet = ledger.Worksheet("PinnedSheet");
+    var table = pinnedSheet.Cell(2, 2).InsertTable(
+      items,
+      "PinnedSheet",
+      true
+    );
+    var pivotSheet = ledger.Worksheet("PivotSheet");
+    var pivot = pivotSheet.PivotTables.Add(
+      "PivotSheet",
+      pivotSheet.Cell(2, 2),
+      table.AsRange()
+    );
+    pivot.RowLabels.Add("Code");
+    pivot.ColumnLabels.Add("Period");
+    pivot.Values.Add("Orders");
   }
 }
