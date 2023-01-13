@@ -52,3 +52,7 @@ dotnet watch run
 ```
 
 ## screenshots
+
+Home:
+
+![home page](https://github.com/paolomococci/mocaccino/blob/main/screenshots/Macaroon/Macaroon-Home.png)
