@@ -53,6 +53,10 @@ dotnet watch run
 
 ## screenshots
 
-Home:
+index:
 
 ![home page](https://github.com/paolomococci/mocaccino/blob/main/screenshots/Macaroon/Macaroon-Home.png)
+
+form for selecting the file to upload not yet completed:
+
+![form for selecting the file to upload not yet completed](https://github.com/paolomococci/mocaccino/blob/main/screenshots/Macaroon/Macaroon-Upload_1.png)
