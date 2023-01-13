@@ -23,3 +23,10 @@ cat <<EOF | tee PuffPastryRC0.code-workspace
 }
 EOF
 ```
+
+### I continue to define the root of the whole project
+
+```shell
+dotnet new gitignore
+touch README.md
+```
