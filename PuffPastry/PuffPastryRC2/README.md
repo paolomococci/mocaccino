@@ -37,7 +37,7 @@ dotnet new gitignore
 dotnet new classlib -o PuffPastry.Common
 cd PuffPastry.Common
 rm Class1.cs
-dotnet add package ClosedXML --version 0.100.3
+dotnet add package ClosedXML --version 0.97.0
 mkdir Models
 echo -e "namespace PuffPastry.Common.Models;\n\npublic class LedgerModel {}" > Models/LedgerModel.cs
 echo -e "namespace PuffPastry.Common.Models;\n\npublic class ItemModel {}" > Models/ItemModel.cs
