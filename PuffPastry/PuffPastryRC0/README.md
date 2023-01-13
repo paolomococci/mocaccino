@@ -47,3 +47,11 @@ echo -e "namespace PuffPastry.Common.Sheet.Templates;\n\npublic class FormulaShe
 echo -e "namespace PuffPastry.Common.Sheet.Templates;\n\npublic class DatatypeSheetTemplate {}" > Sheet/Templates/DatatypeSheetTemplate.cs
 echo -e "namespace PuffPastry.Common.Sheet.Templates;\n\npublic class PinnedSheetTemplate {}" > Sheet/Templates/PinnedSheetTemplate.cs
 ```
+
+### PuffPastry.Mvc.Feather project
+
+```shell
+dotnet new web -o PuffPastry.Mvc.Feather
+cd PuffPastry.Mvc.Feather
+dotnet add ./PuffPastry.Mvc.Feather.csproj reference ../PuffPastry.Common/PuffPastry.Common.csproj
+```
