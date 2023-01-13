@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using PuffPastry.Common.Models;
 
 namespace PuffPastry.Mvc.Feather.Controllers;
 
@@ -20,10 +21,12 @@ public class LedgerController : Controller
 
   public IActionResult Download()
   {
-    using (MemoryStream memoryStream = new MemoryStream()) {}
-    return RedirectToAction(
-      "Index",
-      "Ledger"
-    );
+    using (MemoryStream memoryStream = new MemoryStream()) {
+      return this.File(
+        fileContents: LedgerModel.Perform(memoryStream),
+        contentType: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        fileDownloadName: "Ledger.xlsx"
+      );
+    }
   }
 }
