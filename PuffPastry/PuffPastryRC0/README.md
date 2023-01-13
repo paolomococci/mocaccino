@@ -54,4 +54,6 @@ echo -e "namespace PuffPastry.Common.Sheet.Templates;\n\npublic class PinnedShee
 dotnet new web -o PuffPastry.Mvc.Feather
 cd PuffPastry.Mvc.Feather
 dotnet add ./PuffPastry.Mvc.Feather.csproj reference ../PuffPastry.Common/PuffPastry.Common.csproj
+mkdir Models
+echo -e "namespace PuffPastry.Mvc.Feather.Models;\n\npublic class ErrorViewModel {}" > Models/ErrorViewModel.cs
 ```
