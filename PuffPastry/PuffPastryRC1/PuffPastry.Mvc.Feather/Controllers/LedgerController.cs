@@ -15,4 +15,12 @@ public class LedgerController : Controller {
   {
     return View();
   }
+
+  public IActionResult Download()
+  {
+    return RedirectToAction(
+      "Index",
+      "Ledger"
+    );
+  }
 }
