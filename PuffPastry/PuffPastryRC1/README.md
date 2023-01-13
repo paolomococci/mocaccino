@@ -72,3 +72,7 @@ mkdir wwwroot/js
 echo -e "body { margin-bottom: 60px; }" > wwwroot/css/site.css
 touch wwwroot/js/site.js
 ```
+
+## Index screenshot
+
+![index screenshot](https://github.com/paolomococci/mocaccino/blob/main/screenshots/PuffPastry/PuffPastryRC1-Index.png)
