@@ -59,4 +59,7 @@ echo -e "namespace PuffPastry.Mvc.Feather.Models;\n\npublic class ErrorViewModel
 mkdir Views
 touch Views/_ViewImports.cshtml
 touch Views/_ViewStart.cshtml
+mkdir Views/Shared
+touch Views/Shared/_Layout.cshtml
+touch Views/Shared/Error.cshtml
 ```
