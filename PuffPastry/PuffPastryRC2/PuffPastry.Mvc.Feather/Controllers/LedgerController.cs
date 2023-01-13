@@ -20,7 +20,7 @@ public class LedgerController : Controller
 
   public IActionResult Download()
   {
-    // todo
+    using (MemoryStream memoryStream = new MemoryStream()) {}
     return RedirectToAction(
       "Index",
       "Ledger"
