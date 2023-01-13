@@ -19,7 +19,7 @@ public class LedgerController : Controller
     return View();
   }
 
-  public IActionResult Download()
+  public FileContentResult Download()
   {
     using (MemoryStream memoryStream = new MemoryStream()) {
       return this.File(
