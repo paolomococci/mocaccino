@@ -62,4 +62,6 @@ touch Views/_ViewStart.cshtml
 mkdir Views/Shared
 touch Views/Shared/_Layout.cshtml
 touch Views/Shared/Error.cshtml
+mkdir Views/Ledger
+touch Views/Ledger/Index.cshtml
 ```
