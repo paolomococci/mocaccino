@@ -25,7 +25,7 @@ public class LedgerModel
     }
 
     FormulaSheetTemplate.Transcribe(ledger);
-    //DatatypeSheetTemplate.Transcribe(ledger);
+    DatatypeSheetTemplate.Transcribe(ledger);
     //PinnedSheetTemplate.Transcribe(ledger);
 
     /* pack it all up */
