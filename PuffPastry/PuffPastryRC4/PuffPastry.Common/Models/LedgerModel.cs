@@ -26,8 +26,11 @@ public class LedgerModel
 
     FormulaSheetTemplate.Transcribe(ledger);
     DatatypeSheetTemplate.Transcribe(ledger);
-    PinnedSheetTemplate.Transcribe(ledger);
-    PivotSheetTemplate.Transcribe(ledger);
+    var ixlTable = PinnedSheetTemplate.Transcribe(ledger);
+    PivotSheetTemplate.Transcribe(
+      ledger,
+      ixlTable
+    );
 
     /* pack it all up */
     ledger.SaveAs(memoryStream);
