@@ -46,6 +46,7 @@ mkdir Sheet/Templates
 echo -e "namespace PuffPastry.Common.Sheet.Templates;\n\npublic class FormulaSheetTemplate {}" > Sheet/Templates/FormulaSheetTemplate.cs
 echo -e "namespace PuffPastry.Common.Sheet.Templates;\n\npublic class DatatypeSheetTemplate {}" > Sheet/Templates/DatatypeSheetTemplate.cs
 echo -e "namespace PuffPastry.Common.Sheet.Templates;\n\npublic class PinnedSheetTemplate {}" > Sheet/Templates/PinnedSheetTemplate.cs
+echo -e "namespace PuffPastry.Common.Sheet.Templates;\n\npublic class PivotSheetTemplate {}" > Sheet/Templates/PivotSheetTemplate.cs
 ```
 
 ### PuffPastry.Mvc.Feather project
