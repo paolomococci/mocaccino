@@ -104,7 +104,7 @@ public class PinnedSheetTemplate
       "PinnedSheet",
       true
     );
-    var pivotSheet = ledger.Worksheet("PivotSheet");
+    /*var pivotSheet = ledger.Worksheet("PivotSheet");
     var pivot = pivotSheet.PivotTables.Add(
       "PivotSheet",
       pivotSheet.Cell(2, 2),
@@ -112,6 +112,6 @@ public class PinnedSheetTemplate
     );
     pivot.RowLabels.Add("Code");
     pivot.ColumnLabels.Add("Period");
-    pivot.Values.Add("Orders");
+    pivot.Values.Add("Orders");*/
   }
 }
