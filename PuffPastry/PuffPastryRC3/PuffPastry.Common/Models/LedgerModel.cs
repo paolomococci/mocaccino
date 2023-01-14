@@ -15,8 +15,7 @@ public class LedgerModel
     List<string> sheetNames = new List<string>() {
         "FormulaSheet",
         "DatatypeSheet",
-        "PinnedSheet",
-        "PivotSheet"
+        "PinnedSheet"
       };
     foreach (var sheetName in sheetNames)
     {
