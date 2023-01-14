@@ -5,7 +5,7 @@ namespace PuffPastry.Common.Sheet.Templates;
 
 public class PinnedSheetTemplate
 {
-  internal static void Transcribe(XLWorkbook ledger)
+  internal static IXLTable Transcribe(XLWorkbook ledger)
   {
     List<ItemModel> items = new();
     items.Add(new ItemModel(
@@ -104,5 +104,6 @@ public class PinnedSheetTemplate
       "PinnedSheet",
       true
     );
+    return table;
   }
 }
