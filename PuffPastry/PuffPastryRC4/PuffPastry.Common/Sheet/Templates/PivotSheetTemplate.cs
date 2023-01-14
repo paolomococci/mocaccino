@@ -6,6 +6,6 @@ public class PivotSheetTemplate
 {
   internal static void Transcribe(XLWorkbook ledger)
   {
-    throw new NotImplementedException();
+    var pivotSheet = ledger.Worksheet("PivotSheet");
   }
 }
