@@ -99,11 +99,11 @@ public class PinnedSheetTemplate
       new DateTime(2010, 3, 1)
     ));
     var pinnedSheet = ledger.Worksheet("PinnedSheet");
-    var table = pinnedSheet.Cell(2, 2).InsertTable(
+    var ixlTable = pinnedSheet.Cell(2, 2).InsertTable(
       items,
       "PinnedSheet",
       true
     );
-    return table;
+    return ixlTable;
   }
 }
