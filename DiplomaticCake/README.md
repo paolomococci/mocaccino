@@ -6,7 +6,7 @@ index:
 
 ![home page](https://github.com/paolomococci/mocaccino/blob/main/screenshots/DiplomaticCake/DiplomaticCake-Home.png)
 
-upload form:
+upload form, view designed to load a dataset residing on your system into the processing system:
 
 ![upload form](https://github.com/paolomococci/mocaccino/blob/main/screenshots/DiplomaticCake/DiplomaticCake-Upload.png)
 
