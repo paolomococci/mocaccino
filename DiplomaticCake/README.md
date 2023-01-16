@@ -12,4 +12,8 @@ upload form:
 
 list of uploaded datasets:
 
-![list of uploaded datasets](https://github.com/paolomococci/mocaccino/blob/main/screenshots/DiplomaticCake/DiplomaticCake-Home.png)
+![list of uploaded datasets](https://github.com/paolomococci/mocaccino/blob/main/screenshots/DiplomaticCake/DiplomaticCake-Uploaded.png)
+
+ledger:
+
+![ledger](https://github.com/paolomococci/mocaccino/blob/main/screenshots/DiplomaticCake/DiplomaticCake-Ledger.png)
