@@ -10,7 +10,7 @@ upload form:
 
 ![upload form](https://github.com/paolomococci/mocaccino/blob/main/screenshots/DiplomaticCake/DiplomaticCake-Upload.png)
 
-list of uploaded datasets:
+list of uploaded datasets, view suitable for choosing the dataset to be processed:
 
 ![list of uploaded datasets](https://github.com/paolomococci/mocaccino/blob/main/screenshots/DiplomaticCake/DiplomaticCake-Uploaded.png)
 
