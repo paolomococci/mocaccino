@@ -16,4 +16,8 @@ list of uploaded datasets:
 
 ledger:
 
-![ledger](https://github.com/paolomococci/mocaccino/blob/main/screenshots/DiplomaticCake/DiplomaticCake-Ledger.png)
+![ledger](https://github.com/paolomococci/mocaccino/blob/main/screenshots/DiplomaticCake/DiplomaticCake-Ledger.pngv)
+
+workbooks:
+
+![home page](https://github.com/paolomococci/mocaccino/blob/main/screenshots/DiplomaticCake/DiplomaticCake-Workbooks.png)
