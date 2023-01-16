@@ -16,7 +16,7 @@ List of uploaded datasets, view suitable for choosing the dataset to be processe
 
 Ledger, intermediate view to access the list of workbooks:
 
-![ledger](https://github.com/paolomococci/mocaccino/blob/main/screenshots/DiplomaticCake/DiplomaticCake-Ledger.pngv)
+![ledger](https://github.com/paolomococci/mocaccino/blob/main/screenshots/DiplomaticCake/DiplomaticCake-Ledger.png)
 
 List of workbooks, view suitable for downloading the file of interest:
 
