@@ -14,10 +14,10 @@ list of uploaded datasets:
 
 ![list of uploaded datasets](https://github.com/paolomococci/mocaccino/blob/main/screenshots/DiplomaticCake/DiplomaticCake-Uploaded.png)
 
-ledger:
+ledger, intermediate view to access the list of workbooks:
 
 ![ledger](https://github.com/paolomococci/mocaccino/blob/main/screenshots/DiplomaticCake/DiplomaticCake-Ledger.pngv)
 
-workbooks:
+list of workbooks, view suitable for downloading the file of interest:
 
 ![home page](https://github.com/paolomococci/mocaccino/blob/main/screenshots/DiplomaticCake/DiplomaticCake-Workbooks.png)
