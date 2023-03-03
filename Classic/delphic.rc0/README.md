@@ -10,3 +10,11 @@ cd delphic.rc0
 composer require laravel/breeze --dev
 php artisan breeze:install
 ```
+
+Select framework React when prompted, then continue:
+
+```shell
+npm run dev
+php artisan migrate:fresh
+php artisan schema:dump
+```
