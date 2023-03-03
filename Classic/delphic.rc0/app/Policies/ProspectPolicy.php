@@ -36,7 +36,7 @@ class ProspectPolicy
      */
     public function update(User $user, Prospect $prospect): bool
     {
-        //
+        return $prospect->user()->is($user);
     }
 
     /**
@@ -44,7 +44,7 @@ class ProspectPolicy
      */
     public function delete(User $user, Prospect $prospect): bool
     {
-        //
+        return $this->update($user, $prospect);
     }
 
     /**
