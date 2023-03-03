@@ -17,3 +17,14 @@ Select framework React when prompted, then continue:
 php artisan migrate:fresh
 php artisan schema:dump
 ```
+
+## it's time to develop brainstorming features
+
+Now I will develop the functionality of the application in question that will allow users to register and share their ideas.
+
+```shell
+php artisan make:model -mrc Prospect
+php artisan make:test ProspectFeatureTest
+php artisan make:test ProspectUnitTest --unit
+php artisan make:policy ProspectPolicy --model=Prospect
+```
