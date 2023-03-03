@@ -28,3 +28,10 @@ php artisan make:test ProspectFeatureTest
 php artisan make:test ProspectUnitTest --unit
 php artisan make:policy ProspectPolicy --model=Prospect
 ```
+
+## after modifying the migration file related to table prospects
+
+```shell
+php artisan migrate:fresh
+php artisan schema:dump
+```
