@@ -6,4 +6,7 @@ Brainstorming web application.
 
 ```shell
 composer create-project laravel/laravel delphic.rc0
+cd delphic.rc0
+composer require laravel/breeze --dev
+php artisan breeze:install
 ```
