@@ -49,3 +49,84 @@ mkdir resources/js/Pages/Prospects
 touch resources/js/Pages/Prospects/Index.jsx
 touch resources/js/Components/Prospect.jsx
 ```
+
+## Laravel pages does not refresh?
+
+At this point, after creating the Prospect index view and adding the link to the page, you will find that the dashboard does not refresh.
+Thus, you will need to install package npm-watch:
+
+```shell
+npm i npm-watch
+```
+
+And edit the file package.json as follows.
+Before:
+
+```text
+...
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+...
+```
+
+And after the change:
+
+```text
+...
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "watch": "vite build --watch"
+    },
+...
+```
+
+Finally, in the root of the project it will be necessary to open two separate terminals.
+The following command will be entered on the first one:
+
+```shell
+npm run watch
+```
+
+while the second terminal will be sent this other command:
+
+```shell
+php artisan serve
+```
+
+To have a further certainty of success, you can also disable the cache of the browser used during the development of the application.
+
+## another set of useful commands
+
+```shell
+npm run dev
+npm run build
+```
+
+A useful command to see the objects registered in the database is:
+
+```shell
+php artisan tinker
+```
+
+and, once in the tinker shell:
+
+```shell
+User::all();
+Prospect::all();
+```
+
+## relative time reference
+
+If you want to use a more colloquial present tense reference, you can install the following library:
+
+```shell
+npm i dayjs
+```
+
+## screenshots
+
+![prospects view]()
+
