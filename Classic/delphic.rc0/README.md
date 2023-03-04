@@ -29,9 +29,9 @@ php artisan make:test ProspectUnitTest --unit
 php artisan make:policy ProspectPolicy --model=Prospect
 ```
 
-## after modifying the migration file related to table prospects
+## after modifying the migration file related to table prospect
 
 ```shell
-php artisan migrate:fresh
+php artisan migrate:refresh --path=database/migrations/2023_03_03_101711_create_prospects_table.php
 php artisan schema:dump
 ```
