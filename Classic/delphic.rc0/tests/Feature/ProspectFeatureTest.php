@@ -17,4 +17,11 @@ class ProspectFeatureTest extends TestCase
         $response->dumpSession();
         $response->dd();
     }
+    /**
+     * @test
+     */
+    public function root_endpoint_test(): void
+    {
+        $this->get('/')->assertOk();
+    }
 }
