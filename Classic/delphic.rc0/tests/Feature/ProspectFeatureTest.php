@@ -84,4 +84,17 @@ class ProspectFeatureTest extends TestCase
             ->post(route('prospects.store'))
             ->assertRedirect();
     }
+
+    /**
+     * @test
+     */
+    public function prospects_get_endpoint_with_authentication_dump_test(): void
+    {
+        $user = User::factory()->create();
+        $response = $this->actingAs($user)
+            ->withSession(['message' => 'Today\'s sample!'])
+            ->get('/prospects')
+            ->assertOk();
+        $response->dump();
+    }
 }
