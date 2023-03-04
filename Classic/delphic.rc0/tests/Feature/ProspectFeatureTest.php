@@ -52,4 +52,12 @@ class ProspectFeatureTest extends TestCase
             ->get('/')
             ->assertOk();
     }
+
+    /**
+     * @test
+     */
+    public function prospects_get_endpoint_test(): void
+    {
+        $this->get('/prospects')->assertRedirect();
+    }
 }
