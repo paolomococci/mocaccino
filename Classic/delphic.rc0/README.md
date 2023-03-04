@@ -36,6 +36,12 @@ php artisan migrate:refresh --path=database/migrations/2023_03_03_101711_create_
 php artisan schema:dump
 ```
 
+## to test the backend part of the application
+
+```shell
+php artisan test --profile
+```
+
 ## now it's time to develop the user interface
 
 ```shell
