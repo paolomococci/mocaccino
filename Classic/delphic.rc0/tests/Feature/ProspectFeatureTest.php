@@ -40,4 +40,16 @@ class ProspectFeatureTest extends TestCase
     {
         $this->withSession(['sample' => false])->get('/')->assertOk();
     }
+
+    /**
+     * @test
+     */
+    public function root_endpoint_with_authentication_test(): void
+    {
+        $user = User::factory()->create();
+        $this->actingAs($user)
+            ->withSession(['sample' => false])
+            ->get('/')
+            ->assertOk();
+    }
 }
