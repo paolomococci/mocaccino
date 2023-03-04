@@ -25,3 +25,5 @@ composer.lock
 services.php
 UserFactory.php
 *.ico
+
+!/screenshots/*.png
