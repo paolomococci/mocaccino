@@ -24,4 +24,12 @@ class ProspectFeatureTest extends TestCase
     {
         $this->get('/')->assertOk();
     }
+
+    /**
+     * @test
+     */
+    public function login_get_endpoint_test(): void
+    {
+        $this->get('/login')->assertOk();
+    }
 }
