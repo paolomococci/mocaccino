@@ -128,5 +128,4 @@ npm i dayjs
 
 ## screenshots
 
-![prospects view]()
-
+![prospects view](./screenshots/delphic-prospects-view.png)
