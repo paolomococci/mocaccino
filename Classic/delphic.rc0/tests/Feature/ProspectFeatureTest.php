@@ -60,4 +60,16 @@ class ProspectFeatureTest extends TestCase
     {
         $this->get('/prospects')->assertRedirect();
     }
+
+    /**
+     * @test
+     */
+    public function prospects_get_endpoint_with_authentication_test(): void
+    {
+        $user = User::factory()->create();
+        $this->actingAs($user)
+            ->withSession(['message' => 'Today\'s sample!'])
+            ->get('/prospects')
+            ->assertOk();
+    }
 }
