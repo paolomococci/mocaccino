@@ -35,3 +35,11 @@ php artisan make:policy ProspectPolicy --model=Prospect
 php artisan migrate:refresh --path=database/migrations/2023_03_03_101711_create_prospects_table.php
 php artisan schema:dump
 ```
+
+## now it's time to develop the user interface
+
+```shell
+mkdir resources/js/Pages/Prospects
+touch resources/js/Pages/Prospects/Index.jsx
+touch resources/js/Components/Prospect.jsx
+```
