@@ -32,4 +32,12 @@ class ProspectFeatureTest extends TestCase
     {
         $this->get('/login')->assertOk();
     }
+
+    /**
+     * @test
+     */
+    public function root_endpoint_with_session_test(): void
+    {
+        $this->withSession(['sample' => false])->get('/')->assertOk();
+    }
 }
