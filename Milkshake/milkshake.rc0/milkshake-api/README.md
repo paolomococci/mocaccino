@@ -29,4 +29,5 @@ yarn add ts-node-dev -D
 yarn add typescript -D
 yarn add eslint -D
 yarn add @types/jsonwebtoken -D
+mkdir src && touch src/index.ts
 ```
