@@ -43,4 +43,5 @@ touch src/graphql/types/index.ts
 touch src/graphql/types/Scalar.graphql
 touch src/graphql/types/User.graphql
 mkdir src/models && touch src/models/index.ts && touch src/models/User.ts
+mkdir src/lib && touch src/lib/auth.ts && touch src/lib/jwt.ts
 ```
