@@ -8,5 +8,5 @@ nano package.json
 touch .gitignore
 touch README.md
 touch .env.example
-mkdir config && touch config.json
+mkdir config && touch config/config.json
 ```
