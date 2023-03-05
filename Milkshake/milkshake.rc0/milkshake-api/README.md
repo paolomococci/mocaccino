@@ -35,4 +35,7 @@ touch .eslintignore
 touch global.d.ts
 touch tsconfig.json
 mkdir src && touch src/index.ts
+mkdir src/graphql && mkdir src/graphql/resolvers
+touch src/graphql/resolvers/index.ts
+touch src/graphql/resolvers/user.ts
 ```
