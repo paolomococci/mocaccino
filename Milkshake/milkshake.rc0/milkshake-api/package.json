@@ -10,6 +10,7 @@
   "keywords": [],
   "dependencies": {
     "@contentpi/lib": "^1.0.10",
-    "@graphql-tools/load-files": "^6.6.1"
+    "@graphql-tools/load-files": "^6.6.1",
+    "@graphql-tools/merge": "^8.3.18"
   }
 }
