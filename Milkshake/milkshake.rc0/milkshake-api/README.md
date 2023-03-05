@@ -42,4 +42,5 @@ mkdir src/graphql/types
 touch src/graphql/types/index.ts
 touch src/graphql/types/Scalar.graphql
 touch src/graphql/types/User.graphql
+mkdir src/models && touch src/models/index.ts && touch src/models/User.ts
 ```
