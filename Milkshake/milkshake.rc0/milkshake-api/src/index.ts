@@ -12,3 +12,5 @@ type DatabaseConnection = {
     username: string
     password: string
 }
+
+type Security = {}
