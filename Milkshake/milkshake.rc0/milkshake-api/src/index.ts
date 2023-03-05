@@ -13,4 +13,7 @@ type DatabaseConnection = {
     password: string
 }
 
-type Security = {}
+type Security = {
+    secretKey: string
+    expiresIn: string
+}
