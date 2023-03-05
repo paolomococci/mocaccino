@@ -33,5 +33,6 @@ yarn add eslint -D
 yarn add @types/jsonwebtoken -D
 touch .eslintignore
 touch global.d.ts
+touch tsconfig.json
 mkdir src && touch src/index.ts
 ```
