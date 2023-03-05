@@ -17,3 +17,5 @@ type Security = {
     secretKey: string
     expiresIn: string
 }
+
+type Server = {}
