@@ -23,7 +23,10 @@ export interface IUser extends User, Sequelize {
 
 export interface ICreateUserInput extends User { }
 
-export interface ILoginInput { }
+export interface ILoginInput {
+    email: string
+    password: string
+}
 
 export interface IAuthPayload { }
 
