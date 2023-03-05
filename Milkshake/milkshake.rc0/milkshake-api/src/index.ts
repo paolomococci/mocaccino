@@ -46,3 +46,4 @@ const {
 } = config
 
 export const $db: DatabaseConnection = db
+export const $security: Security = security
