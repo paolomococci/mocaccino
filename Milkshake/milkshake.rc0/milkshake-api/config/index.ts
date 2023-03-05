@@ -1,7 +1,5 @@
 import dotenv from 'dotenv'
 import config from '../config/config.json'
-import { ApolloServer } from '@apollo/server'
-import { startStandaloneServer } from '@apollo/server/standalone'
 
 dotenv.config()
 
