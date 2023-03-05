@@ -9,6 +9,7 @@
   },
   "keywords": [],
   "dependencies": {
-    "@contentpi/lib": "^1.0.10"
+    "@contentpi/lib": "^1.0.10",
+    "@graphql-tools/load-files": "^6.6.1"
   }
 }
