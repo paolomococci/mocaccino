@@ -39,3 +39,8 @@ const db: DatabaseConnection = {
     username: DB_USERNAME,
     password: DB_PASSWORD
 }
+
+const {
+    security,
+    server
+} = config
