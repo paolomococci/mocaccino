@@ -1,4 +1,7 @@
-import { User, Sequelize } from './types'
+import {
+    User, 
+    Sequelize
+} from './types'
 
 export interface IDataTypes { }
 
