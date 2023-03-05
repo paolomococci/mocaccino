@@ -13,6 +13,7 @@ yarn add @contentpi/lib
 yarn add @graphql-tools/load-files
 yarn add @graphql-tools/merge
 yarn add @apollo/server
+yarn add graphql
 yarn add dotenv
 yarn add express
 yarn add jsonwebtoken
@@ -20,6 +21,7 @@ yarn add pg
 yarn add pg-hstore
 yarn add sequelize
 yarn add ts-node
+yarn add @types/node
 yarn add husky -D
 yarn add jest -D
 yarn add prettier -D
