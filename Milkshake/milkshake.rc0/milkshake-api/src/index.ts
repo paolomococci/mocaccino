@@ -47,3 +47,4 @@ const {
 
 export const $db: DatabaseConnection = db
 export const $security: Security = security
+export const $server: Server = server
