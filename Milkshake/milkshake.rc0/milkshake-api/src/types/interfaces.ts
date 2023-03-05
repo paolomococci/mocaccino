@@ -3,7 +3,16 @@ import {
     Sequelize
 } from './types'
 
-export interface IDataTypes { }
+export interface IDataTypes {
+    UUID: string
+    UUIDV4(): string
+    STRING: string
+    BOOLEAN: boolean
+    TEXT: string
+    INTEGER: number
+    DATE: string
+    FLOAT: number
+}
 
 export interface IUser extends User, Sequelize { }
 
