@@ -44,3 +44,5 @@ const {
     security,
     server
 } = config
+
+export const $db: DatabaseConnection = db
