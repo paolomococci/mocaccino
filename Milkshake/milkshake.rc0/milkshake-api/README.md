@@ -8,7 +8,7 @@ nano package.json
 touch .gitignore
 touch README.md
 touch .env.example
-mkdir config && touch config/config.json
+mkdir config && touch config/config.json && touch config/index.ts
 yarn add @contentpi/lib
 yarn add @graphql-tools/load-files
 yarn add @graphql-tools/merge
