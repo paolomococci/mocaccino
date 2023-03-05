@@ -4,4 +4,11 @@ import { type } from 'os'
 
 dotenv.config()
 
-type DatabaseConnection = {}
+type DatabaseConnection = {
+    dialect: string
+    host: string
+    port: string
+    database: string
+    username: string
+    password: string
+}
