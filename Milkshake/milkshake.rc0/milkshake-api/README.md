@@ -38,4 +38,8 @@ mkdir src && touch src/index.ts
 mkdir src/graphql && mkdir src/graphql/resolvers
 touch src/graphql/resolvers/index.ts
 touch src/graphql/resolvers/user.ts
+mkdir src/graphql/types
+touch src/graphql/types/index.ts
+touch src/graphql/types/Scalar.graphql
+touch src/graphql/types/User.graphql
 ```
