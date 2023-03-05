@@ -1,2 +1,2 @@
 import { Sequelize } from 'sequelize'
-import { $db } from '../../config/index'
+import { $db } from '../../config'
