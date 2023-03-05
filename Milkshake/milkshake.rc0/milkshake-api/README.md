@@ -12,7 +12,7 @@ mkdir config && touch config/config.json
 yarn add @contentpi/lib
 yarn add @graphql-tools/load-files
 yarn add @graphql-tools/merge
-yarn add apollo-server
+yarn add @apollo/server
 yarn add dotenv
 yarn add express
 yarn add jsonwebtoken
