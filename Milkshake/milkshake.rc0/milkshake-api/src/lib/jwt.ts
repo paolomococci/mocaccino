@@ -40,5 +40,29 @@ export async function getUserData(
 export const createToken = async (
     user: IUser
 ): Promise<string[]> => {
-    return Promise.all([])
+    const {
+        id,
+        username,
+        password,
+        email,
+        privilege,
+        active
+    } = user
+    const token = setBase64(
+        `${encrypt($security.secretKey)}${password}`
+    )
+    const userData = {
+        id,
+        username,
+        email,
+        privilege,
+        active,
+        token
+    }
+    const _createToken = jwt.sign(
+        { data: setBase64(userData) },
+        $security.secretKey,
+        { expiresIn: $security.expiresIn }
+    )
+    return Promise.all([_createToken])
 }
