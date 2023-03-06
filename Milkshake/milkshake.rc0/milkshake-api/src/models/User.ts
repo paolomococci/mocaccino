@@ -49,7 +49,11 @@ export default (sequelize: any, DataTypes: IDataTypes): IUser => {
                 allowNull: false,
                 defaultValue: 'user'
             },
-            active: {}
+            active: {
+                type: DataTypes.BOOLEAN,
+                allowNull: false,
+                defaultValue: false
+            }
         },
         {
             hooks: {}
