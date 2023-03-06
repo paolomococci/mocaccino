@@ -44,7 +44,11 @@ export default (sequelize: any, DataTypes: IDataTypes): IUser => {
                     }
                 }
             },
-            privilege: {},
+            privilege: {
+                type: DataTypes.STRING,
+                allowNull: false,
+                defaultValue: 'user'
+            },
             active: {}
         },
         {
