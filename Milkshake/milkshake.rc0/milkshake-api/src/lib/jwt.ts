@@ -9,10 +9,17 @@ import { IUser } from '../types'
 
 const { secretKey } = $security
 
-export function jwtVerify(accessToken: string, cb: any): void {}
+export function jwtVerify(
+    accessToken: string, 
+    cb: any
+): void {}
 
-export async function getUserData(accessToken: string): Promise<any> {}
+export async function getUserData(
+    accessToken: string
+): Promise<any> {}
 
-export const createToken = async (user: IUser): Promise<string[]> => {
+export const createToken = async (
+    user: IUser
+): Promise<string[]> => {
     return Promise.all([])
 }
