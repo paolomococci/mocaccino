@@ -14,7 +14,21 @@ export default (sequelize: any, DataTypes: IDataTypes): IUser => {
                 type: DataTypes.UUID,
                 defaultValue: DataTypes.UUIDV4()
             },
-            username: {},
+            username: {
+                type: DataTypes.STRING,
+                allowNull: false,
+                unique: true,
+                validate: {
+                    isAlphanumeric: {
+                        args: true,
+                        msg: 'only alphanumeric characters can be accepted for username'
+                    },
+                    len: {
+                        args: [4, 20],
+                        msg: 'username can be between four and twenty characters'
+                    }
+                }
+            },
             password: {},
             email: {},
             privilege: {},
