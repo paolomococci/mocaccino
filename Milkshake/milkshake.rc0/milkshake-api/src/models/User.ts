@@ -33,7 +33,17 @@ export default (sequelize: any, DataTypes: IDataTypes): IUser => {
                 type: DataTypes.STRING,
                 allowNull: false
             },
-            email: {},
+            email: {
+                type: DataTypes.STRING,
+                allowNull: false,
+                unique: true,
+                validate: {
+                    isEmail: {
+                        args: true,
+                        msg: 'the supplied email does not have a valid format'
+                    }
+                }
+            },
             privilege: {},
             active: {}
         },
