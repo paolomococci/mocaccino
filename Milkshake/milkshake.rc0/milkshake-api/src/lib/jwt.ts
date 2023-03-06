@@ -12,3 +12,7 @@ const { secretKey } = $security
 export function jwtVerify(accessToken: string, cb: any): void {}
 
 export async function getUserData(accessToken: string): Promise<any> {}
+
+export const createToken = async (user: IUser): Promise<string[]> => {
+    return Promise.all([])
+}
