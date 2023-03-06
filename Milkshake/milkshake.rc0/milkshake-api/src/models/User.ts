@@ -1,6 +1,6 @@
 import { encrypt } from '@contentpi/lib'
 import {
-    IUser, 
+    IUser,
     IDataTypes
 } from '../types'
 
