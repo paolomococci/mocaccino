@@ -64,5 +64,7 @@ export const createToken = async (
         $security.secretKey,
         { expiresIn: $security.expiresIn }
     )
-    return Promise.all([_createToken])
+    return Promise.all(
+        [_createToken]
+    )
 }
