@@ -12,5 +12,6 @@ import {
 } from '../../lib/auth'
 
 export default {
-    Query: {}
+    Query: {},
+    Mutation: {}
 }
