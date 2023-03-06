@@ -5,6 +5,10 @@ import {
 } from '../types'
 
 export default (sequelize: any, DataTypes: IDataTypes): IUser => {
-    const User = sequelize.define()
+    const User = sequelize.define(
+        'User',
+        {},
+        {}
+    )
     return User
 }
