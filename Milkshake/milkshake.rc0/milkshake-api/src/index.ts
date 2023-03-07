@@ -48,3 +48,5 @@ const { url } = await startStandaloneServer(
         listen: { port: 5000 }
     }
 )
+
+console.log(`server listening at: ${url}`)
