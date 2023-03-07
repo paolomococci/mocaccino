@@ -29,6 +29,11 @@ const movies = [
         director: 'Aulo Agerio',
         genre: "documentary",
     },
+    {
+        title: 'the dissatisfied',
+        director: 'Numerio Negidio',
+        genre: 'comedy',
+    },
 ]
 
 const resolvers = {
