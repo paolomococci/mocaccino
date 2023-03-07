@@ -12,3 +12,21 @@ const typeDefs = `#graphql
         movies: [Movie]
     }
 `
+
+const movies = [
+    {
+        title: 'morning taste',
+        director: 'John Doe',
+        genre: "dramatic",
+    },
+    {
+        title: 'the dummy boot',
+        director: 'Jane Doe',
+        genre: "sentimental",
+    },
+    {
+        title: 'the definitive fall of the eastern empire',
+        director: 'Aulo Agerio',
+        genre: "documentary",
+    },
+]
