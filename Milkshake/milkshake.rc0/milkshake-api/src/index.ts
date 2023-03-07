@@ -36,3 +36,8 @@ const resolvers = {
         movies: () => movies,
     },
 }
+
+const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+})
