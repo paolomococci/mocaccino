@@ -3,9 +3,13 @@
   "version": "0.0.1",
   "description": "",
   "private": "true",
-  "main": "index.js",
+  "keywords": [],
+  "main": "dist/index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "npm run compile",
+    "compile": "tsc",
+    "start": "npm run compile && node ./dist/index.js"
   },
   "dependencies": {
     "@apollo/server": "^4.4.1",
