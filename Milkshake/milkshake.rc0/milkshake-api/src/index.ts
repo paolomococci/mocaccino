@@ -30,3 +30,9 @@ const movies = [
         genre: "documentary",
     },
 ]
+
+const resolvers = {
+    Query: {
+        movies: () => movies,
+    },
+}
