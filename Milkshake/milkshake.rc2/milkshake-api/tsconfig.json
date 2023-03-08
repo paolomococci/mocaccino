@@ -6,6 +6,7 @@
         "module": "CommonJS",
         "noImplicitAny": true,
         "esModuleInterop": true,
+        "resolveJsonModule": true,
         "lib": [
             "es2020"
         ],
