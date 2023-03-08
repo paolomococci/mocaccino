@@ -9,3 +9,8 @@ import typeDefs from './graphql/types'
 
 const alter = true
 const force = false
+
+const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+})
