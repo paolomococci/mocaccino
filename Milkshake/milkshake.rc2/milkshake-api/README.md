@@ -3,9 +3,10 @@
 ## scaffolding
 
 ```shell
-mkdir milkshake-api && cd milkshake-api && npm init --yes
+mkdir milkshake-api && cd milkshake-api && touch .gitignore
+nano .gitignore
+npm init --yes
 nano package.json
-touch .gitignore
 touch README.md
 touch .env.example
 mkdir config && touch config/config.json && touch config/index.ts
