@@ -10,7 +10,11 @@ import typeDefs from './graphql/types'
 const alter = true
 const force = false
 
-const server = new ApolloServer({
+const schema = makeExecutableSchema({
     typeDefs,
-    resolvers,
+    resolvers
+  })
+
+const server = new ApolloServer({
+    schema,
 })
