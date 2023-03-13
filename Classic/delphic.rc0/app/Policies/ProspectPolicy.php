@@ -12,7 +12,7 @@ class ProspectPolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        return false;
     }
 
     /**
@@ -20,7 +20,7 @@ class ProspectPolicy
      */
     public function view(User $user, Prospect $prospect): bool
     {
-        //
+        return false;
     }
 
     /**
@@ -28,7 +28,7 @@ class ProspectPolicy
      */
     public function create(User $user): bool
     {
-        //
+        return false;
     }
 
     /**
@@ -52,7 +52,7 @@ class ProspectPolicy
      */
     public function restore(User $user, Prospect $prospect): bool
     {
-        //
+        return false;
     }
 
     /**
@@ -60,6 +60,6 @@ class ProspectPolicy
      */
     public function forceDelete(User $user, Prospect $prospect): bool
     {
-        //
+        return false;
     }
 }
