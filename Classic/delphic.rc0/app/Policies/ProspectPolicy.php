@@ -20,7 +20,7 @@ class ProspectPolicy
      */
     public function view(User $user, Prospect $prospect): bool
     {
-        return true;
+        return $prospect->user()->is($user);
     }
 
     /**
@@ -52,7 +52,7 @@ class ProspectPolicy
      */
     public function restore(User $user, Prospect $prospect): bool
     {
-        return true;
+        return $prospect->user()->is($user);
     }
 
     /**
@@ -60,6 +60,6 @@ class ProspectPolicy
      */
     public function forceDelete(User $user, Prospect $prospect): bool
     {
-        return true;
+        return $prospect->user()->is($user);
     }
 }
