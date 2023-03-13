@@ -129,3 +129,11 @@ npm i dayjs
 ## screenshots
 
 ![prospects view](./screenshots/delphic-prospects-view.png)
+
+## notes
+
+In case you need to reset the contents of the entire database related to the application, you can type the following command:
+
+```shell
+php artisan migrate:refresh
+```
