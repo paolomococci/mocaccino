@@ -69,7 +69,6 @@ class ProspectFeatureTest extends TestCase
     {
         $user = User::factory()->create();
         $this->actingAs($user)
-            ->withSession(['message' => 'Today\'s sample!'])
             ->get('/prospects')
             ->assertOk();
     }
@@ -81,8 +80,10 @@ class ProspectFeatureTest extends TestCase
     {
         $user = User::factory()->create();
         $this->actingAs($user)
-            ->withSession(['message' => 'Today\'s sample!'])
-            ->post(route('prospects.store'))
+            ->post(
+                route('prospects.store'), [
+                'message' => 'Today\'s sample!'
+            ])
             ->assertRedirect();
     }
 
@@ -93,8 +94,9 @@ class ProspectFeatureTest extends TestCase
     {
         $user = User::factory()->create();
         $response = $this->actingAs($user)
-            ->withSession(['message' => 'Today\'s sample!'])
-            ->get('/prospects')
+            ->get(
+                route('prospects.index')
+            )
             ->assertOk();
         $response->dump();
     }
